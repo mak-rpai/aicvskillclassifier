@@ -1,0 +1,8 @@
+pandas
+numpy==1.23.5
+streamlit
+docx2txt
+scikit-learn==1.0.2
+bokeh==2.4.3
+streamlit_authenticator
+https://huggingface.co/makrpai/en_nlp_ner_transformer_pipeline/resolve/main/en_nlp_ner_transformer_pipeline-any-py3-none-any.whl
