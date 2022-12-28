@@ -13,7 +13,7 @@ warnings.filterwarnings("ignore")
 # --- page setting ---
 st.set_page_config(
     page_title="AI CV Skill Clasifier",
-    page_icon="🧊",
+    page_icon="",
     layout="wide",
     initial_sidebar_state="expanded",
     menu_items= None
