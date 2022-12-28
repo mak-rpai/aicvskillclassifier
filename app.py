@@ -5,15 +5,17 @@ import utills
 import en_nlp_ner_transformer_pipeline
 import streamlit_authenticator as stauth
 from pathlib import Path
+from PIL import Image
 import pickle
 import warnings
 
 warnings.filterwarnings("ignore")
 
 # --- page setting ---
+img = Image.open("./data/icon.png")
 st.set_page_config(
     page_title="AI CV Skill Clasifier",
-    page_icon="",
+    page_icon=img,
     layout="wide",
     initial_sidebar_state="expanded",
     menu_items= None
