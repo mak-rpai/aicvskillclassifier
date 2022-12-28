@@ -77,14 +77,14 @@ def createDataForSecondModelPrediction(data, skillList):
     
 def get_hcm_model_output(data, originalHCMSkillList):
     with open('./models/HCMModelBest.pkl' , 'rb') as f:
-        biModel = pickle.load(f)
-        predict = biModel.predict(data)
+        hcmModel = pickle.load(f)
+        predict = hcmModel.predict(data)
         predictedSkillList = [" , ".join(originalHCMSkillList[row.astype(int).astype(np.bool)]) for row in predict]
     return predictedSkillList
 def get_hybris_model_output(data, originalHybrisSkillList):
     with open('./models/HybrisModelBest.pkl' , 'rb') as f:
-        biModel = pickle.load(f)
-        predict = biModel.predict(data)
+        hybrisModel = pickle.load(f)
+        predict = hybrisModel.predict(data)
         predictedSkillList = [" , ".join(originalHybrisSkillList[row.astype(int).astype(np.bool)]) for row in predict]
     return predictedSkillList
 def get_bi_model_output(data, originalBiSkillList):
