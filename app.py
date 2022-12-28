@@ -36,15 +36,15 @@ for uname,name,pwd in zip(usernames,names,hashed_passwords):
     user_dict = {"name": name, "password": pwd}
     credentials["usernames"].update({uname: user_dict})
 
-authenticator = stauth.Authenticate(credentials,"aicv_classifier", "abcdef", cookie_expiry_days=30)
+authenticator = stauth.Authenticate(credentials,"aicv_classifier", "abcdef", cookie_expiry_days=7)
 name, authentication_status, username = authenticator.login("Login", "main")
 
-if authentication_status == False:
+if st.session_state["authentication_status"] == False:
     st.error("Username/password is incorrect")
-elif authentication_status == None:
+elif st.session_state["authentication_status"] == None:
     st.warning("Please enter your username and password")
-elif authentication_status:
-    st.sidebar.title(f"Welcome {name}")
+elif st.session_state["authentication_status"]:
+    st.sidebar.title(f'Welcome *{st.session_state["name"]}*')
     authenticator.logout("Logout", "sidebar")
     
     df = pd.read_csv(
