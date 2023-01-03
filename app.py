@@ -2,12 +2,12 @@ import streamlit as st
 import pandas as pd
 from collections import Counter,OrderedDict
 import utills
-import en_nlp_ner_transformer_pipeline
+#import en_nlp_ner_transformer_pipeline
 import streamlit_authenticator as stauth
 from pathlib import Path
-from PIL import Image
 import pickle
 import warnings
+from PIL import Image
 
 warnings.filterwarnings("ignore")
 
@@ -17,7 +17,7 @@ st.set_page_config(
     page_title="AI CV Skill Clasifier",
     page_icon=img,
     layout="wide",
-    initial_sidebar_state="expanded",
+    initial_sidebar_state="auto",
     menu_items= None
 )
 with open('style.css') as f:
@@ -64,16 +64,9 @@ elif st.session_state["authentication_status"]:
     cont = st.container()
     cvFile = cont.file_uploader("Select a CV :", type='.docx')
     button = cont.button("Analyze")
-    @st.cache(allow_output_mutation=True)
-    def get_nlp_model():
-        nlp = en_nlp_ner_transformer_pipeline.load()
-        return nlp
-
-    nlp = get_nlp_model()
-
+    
     if cvFile is not None and button:
-        content = utills.clean_data_for_second_model_one_file(cvFile, pattern_keywords)
-        skillDict = [dict(Counter([ent.text for ent in nlp(content).ents]))]
+        skillDict = utills.make_dataset_regex_single_cv(cvFile, pattern_keywords)
         modelInputs = utills.divide_categories(skillDict, df, categories)
         plotSkills = {
                     k: v for k, v in skillDict[0].items() if ( v > 1)

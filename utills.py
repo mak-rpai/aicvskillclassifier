@@ -6,11 +6,9 @@ Created on Wed Nov 23 08:06:34 2022
 """
 import pandas as pd
 import numpy as np
-import os
 import docx2txt
 import re
 from collections import Counter
-import requests
 import pickle
 import bokeh.palettes as palette
 from bokeh.transform import factor_cmap
@@ -19,47 +17,37 @@ from bokeh.plotting import figure
 from math import pi
 #import operator
 
-API_URL = "https://api-inference.huggingface.co/models/makrpai/en_nlp_ner_transformer_pipeline"
-headers = {"Authorization": "Bearer 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"}
-
-def query(payload):
-	response = requests.post(API_URL, headers=headers, json=payload)
-	return response.json()
 
 
-def replace_matched_pattern(pattern_keywords, content):
+def replace_matched_pattern_regex(pattern_keywords, content):
     """
     this functions takes two arguments as parameters
     - a list which contains a list of pattern to search and corresponding replacement keywords
     - document (candidates CV)
     """
+    content = re.sub("\s+", " ", content)
     for items in pattern_keywords:
         try:
             content = re.sub(items[0], items[1], content)
         except:
             pass
+    # removing of all special characters except "_"
+    content = re.sub("[^A-Za-z0-9_]", " ", content)
+    # removing extra white spaces
+    content = re.sub("\s+", " ", content)
     return content
 
-def clean_data_for_second_model_one_file(filePath, pattern_keywords):
-    try:
-        content = docx2txt.process(filePath)
-        # removing new line and tab spaces
-        content = re.sub("\s+", " ", content)
-        content = replace_matched_pattern(pattern_keywords, content)
-        # removing of all special characters except "_"
-        content = re.sub("[^A-Za-z0-9_]+", " ", content)
-        # removing extra white spaces
-        content = re.sub("\s+", " ", content)
-    except:
-        pass
-    return content
-def apiresponse(input):
-    output = query({"inputs":input})
-    try:
-        out = [dict(Counter([ent['word'] for ent in output]))]
-    except:
-        out = 'api_error'
-    return out
+def make_dataset_regex_single_cv(fileName,pattern_keywords):
+    content = docx2txt.process(fileName)
+    content = replace_matched_pattern_regex(pattern_keywords,content)    
+    all_skills=[]
+    for item in pattern_keywords:
+        allMatch = re.finditer(r"\b"+item[1]+r"\b", content)
+        if(allMatch!=[]):
+            for match in allMatch:
+                all_skills.append(item[1])
+    return [dict(Counter(all_skills))]
+
 
 def createDataForSecondModelPrediction(data, skillList):
     finalDataDict = []
@@ -77,14 +65,14 @@ def createDataForSecondModelPrediction(data, skillList):
     
 def get_hcm_model_output(data, originalHCMSkillList):
     with open('./models/HCMModelBest.pkl' , 'rb') as f:
-        hcmModel = pickle.load(f)
-        predict = hcmModel.predict(data)
+        biModel = pickle.load(f)
+        predict = biModel.predict(data)
         predictedSkillList = [" , ".join(originalHCMSkillList[row.astype(int).astype(np.bool)]) for row in predict]
     return predictedSkillList
 def get_hybris_model_output(data, originalHybrisSkillList):
     with open('./models/HybrisModelBest.pkl' , 'rb') as f:
-        hybrisModel = pickle.load(f)
-        predict = hybrisModel.predict(data)
+        biModel = pickle.load(f)
+        predict = biModel.predict(data)
         predictedSkillList = [" , ".join(originalHybrisSkillList[row.astype(int).astype(np.bool)]) for row in predict]
     return predictedSkillList
 def get_bi_model_output(data, originalBiSkillList):
