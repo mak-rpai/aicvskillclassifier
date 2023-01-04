@@ -55,9 +55,11 @@ elif st.session_state["authentication_status"]:
     encoding="latin1",
     usecols=["category", "regex_pattern", "replaced_by", "original_skill"],
 )
-    pattern_keywords = list(zip(df["regex_pattern"], df["replaced_by"]))
+    pattern_keywords = list(zip(df["regex_pattern"], df["replaced_by"], df["original_skill"]))
     categories = list(df.category.unique())
-
+    # functon to convert list to dictionary
+    def lst_dict(lst):
+        return {item: 0 for item in lst}
     # Title of the app
     st.title("AI CV Skill Classifier")
     st.subheader("Please Upload a SAP CV in .docx format")
@@ -67,24 +69,30 @@ elif st.session_state["authentication_status"]:
     
     if cvFile is not None and button:
         skillDict = utills.make_dataset_regex_single_cv(cvFile, pattern_keywords)
-        modelInputs = utills.divide_categories(skillDict, df, categories)
-        plotSkills = {
-                    k: v for k, v in skillDict[0].items() if ( v > 1)
-                }
-        plotSkills = OrderedDict(sorted(plotSkills.items(), key=lambda x: x[1],reverse=True))
-        finalBestOutput = utills.select_model_and_produce_results(modelInputs,df)
-        with st.container():
-            textCol, graphCol = st.columns(2)
-            with textCol:
-                st.subheader('Analyzed Results:')
-                st.write("Record Id: ", cvFile.name[:-5])
-                #st.write("Model Input:", modelInputs)
-                #st.write("Skills found :", finalBestOutput)
-                st.write("Skills found : ",", ".join(finalBestOutput[0]))
-            with graphCol:
-                st.subheader('Visualized Results:')
-                #st.write("Skills list : ",skillDict)
-                st.bokeh_chart(utills.generate_figure(plotSkills, 'Skill found on Record Id:  '+cvFile.name[:-5]), use_container_width=True)
+        if(bool(skillDict[0])):
+            modelInputs = utills.divide_categories(skillDict, df, categories)
+            #plotSkills = {k: v for k, v in skillDict[0].items() if ( v > 1)}
+            plotSkills = OrderedDict(sorted(skillDict[0].items(), key=lambda x: x[1],reverse=True))
+            finalBestOutput = utills.select_model_and_produce_results(modelInputs,df)
+            with st.container():
+                textCol, graphCol = st.columns(2)
+                with textCol:
+                    st.subheader('Analyzed Results:')
+                    st.write("Record Id: ", cvFile.name[:-5])
+                    st.markdown(f'Max skills found in :blue[{list(modelInputs[0].keys())[0]}] category')
+                    st.write("Selected second Model:",list(modelInputs[0].keys())[0])
+                    selectedSkillList = df[df.category == list(modelInputs[0].keys())[0]].replaced_by.values
+                    selectedSkillDict = lst_dict(selectedSkillList)
+                    selectedSkillDict.update(modelInputs[0][list(modelInputs[0].keys())[0]])
+                    st.write("Input to selected second model:", selectedSkillDict)
+                    #st.write("Skills found :", finalBestOutput)
+                    st.write("Predicted skills by second model: ",", ".join(finalBestOutput[0]))
+                with graphCol:
+                    st.subheader('Visualized Results (First model output):')
+                    #st.write("Skills list : ",skillDict)
+                    st.bokeh_chart(utills.generate_figure(plotSkills, 'All skills found on Record Id:  '+cvFile.name[:-5]), use_container_width=True)
+        else:
+            st.write("No skill found Record Id: ", cvFile.name[:-5])
     elif cvFile is None and button:
         st.warning('No file is choosen!! Please upload a file in .docx format', icon="⚠️")
     else:

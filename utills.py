@@ -62,6 +62,7 @@ def createDataForSecondModelPrediction(data, skillList):
     except:
         pass
     return pd.DataFrame(finalDataDict, columns=skillList).fillna(0).values
+    #return pd.DataFrame(finalDataDict, columns=skillList).fillna(0)
     
 def get_hcm_model_output(data, originalHCMSkillList):
     with open('./models/HCMModelBest.pkl' , 'rb') as f:
@@ -145,7 +146,7 @@ def select_model_and_produce_results(modelInputs, df):
             inputForFiModel = createDataForSecondModelPrediction(data['Hybris'], df[df.category == "Hybris"].replaced_by.values)
             finalBestOutput = get_hybris_model_output(inputForFiModel,df[df.category == "Hybris"].original_skill.values)
         else:
-            finalBestOutput = [f'Max skills found in {list(data.keys())[0]} category, which is not implemented yet!']
+            finalBestOutput = [f'{list(data.keys())[0]} category is not implemented yet!']
         finalBestOutputs.append(finalBestOutput)
     return finalBestOutputs
 '''
