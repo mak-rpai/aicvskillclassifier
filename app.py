@@ -79,7 +79,7 @@ elif st.session_state["authentication_status"]:
                 with textCol:
                     st.subheader('Analyzed Results:')
                     st.write("Record Id: ", cvFile.name[:-5])
-                    st.markdown(f'Max skills found in :blue[{list(modelInputs[0].keys())[0]}] category')
+                    st.markdown(f'Max skills found in <span style="color:Blue">{list(modelInputs[0].keys())[0]} </span> category', unsafe_allow_html=True)
                     st.write("Selected second Model:",list(modelInputs[0].keys())[0])
                     selectedSkillList = df[df.category == list(modelInputs[0].keys())[0]].replaced_by.values
                     selectedSkillDict = lst_dict(selectedSkillList)
