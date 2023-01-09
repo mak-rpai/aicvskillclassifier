@@ -77,7 +77,7 @@ elif st.session_state["authentication_status"]:
         button = cont.button("Analyze")
         
         if cvFile is not None and button:
-            skillDict = utills.make_dataset_regex(cvFile, pattern_keywords)
+            skillDict = utills.make_dataset_regex(cvFile, pattern_keywords,multiple=False)
             if skillDict[list(skillDict.keys())[0]]:
                 modelInputs = utills.divide_categories(skillDict, df, categories)
                 finalBestOutput = utills.select_model_and_produce_results(modelInputs,df)
@@ -117,7 +117,7 @@ elif st.session_state["authentication_status"]:
         button = cont.button("Analyze")
         
         if cvFiles and button:
-            skillDict = utills.make_dataset_regex(cvFiles, pattern_keywords,True)
+            skillDict = utills.make_dataset_regex(cvFiles, pattern_keywords,multiple=True)
             modelInputs = utills.divide_categories(skillDict, df, categories)
             finalBestOutput = utills.select_model_and_produce_results(modelInputs,df)
             st.subheader('Analyzed Results:')
