@@ -37,16 +37,25 @@ def replace_matched_pattern_regex(pattern_keywords, content):
     content = re.sub("\s+", " ", content)
     return content
 
-def make_dataset_regex_single_cv(fileName,pattern_keywords):
-    content = docx2txt.process(fileName)
-    content = replace_matched_pattern_regex(pattern_keywords,content)    
+def extract_all_skill(file,pattern_keywords):
     all_skills=[]
+    content = replace_matched_pattern_regex(pattern_keywords,docx2txt.process(file))    
     for item in pattern_keywords:
         allMatch = re.finditer(r"\b"+item[1]+r"\b", content)
         if(allMatch!=[]):
             for match in allMatch:
                 all_skills.append(item[1])
-    return [dict(Counter(all_skills))]
+    return all_skills
+def make_dataset_regex(fileNames,pattern_keywords, multiple=False):
+    datasets = {}
+    if multiple:
+        for file in fileNames:
+            all_skills = extract_all_skill(file,pattern_keywords)
+            datasets[file.name[:-5]]= dict(Counter(all_skills))
+    else:
+        all_skills = extract_all_skill(fileNames,pattern_keywords)
+        datasets[fileNames.name[:-5]]= dict(Counter(all_skills))
+    return datasets
 
 
 def createDataForSecondModelPrediction(data, skillList):
@@ -89,8 +98,6 @@ def get_fi_model_output(data, originalFiSkillList):
         predictedSkillList = [" , ".join(originalFiSkillList[row.astype(int).astype(np.bool)]) for row in predict]
     return predictedSkillList
 
-
-
 def generate_figure(entities, titleText):
   color=palette.viridis(len(entities))
   p = figure(x_range = list(entities.keys()), title='', tools="hover", tooltips="@skills: @skill_count")
@@ -107,8 +114,9 @@ def generate_figure(entities, titleText):
 
 #def divide_categories(dataDict, df, categories, categoryThreshold = 0.7, truncatedValue=1):
 def divide_categories(dataDict, df, categories, truncatedValue=1):
-        finalDataDict = []
-        for data in dataDict:
+    finalDataDict = {}
+    for keyId,data in dataDict.items():
+        if data:
             catgoriesArray = []
             countEachCategory = []
             for catg in categories:
@@ -123,31 +131,32 @@ def divide_categories(dataDict, df, categories, truncatedValue=1):
                         pass
                 except:
                     pass
-            '''percentage = [i/max(countEachCategory) for i in countEachCategory]
-            indexes = [idx for idx, value in enumerate(percentage) if value >=categoryThreshold]
-            finalDataDict.append(operator.itemgetter(*indexes)(catgoriesArray))
-            finalDataDict.append(percentage)'''
-            finalDataDict.append(catgoriesArray[np.argmax(countEachCategory)])
-        return finalDataDict
+            finalDataDict[keyId] = catgoriesArray[np.argmax(countEachCategory)]
+        else:
+            finalDataDict[keyId] = {}
+    return finalDataDict
 
 def select_model_and_produce_results(modelInputs, df):
-    finalBestOutputs =[]
-    for data in modelInputs:
-        if list(data.keys())[0] == 'BI Tools':
-            inputForBiModel = createDataForSecondModelPrediction(data['BI Tools'], df[df.category == "BI Tools"].replaced_by.values)
-            finalBestOutput = get_bi_model_output(inputForBiModel,df[df.category == "BI Tools"].original_skill.values)
-        elif list(data.keys())[0] == 'Financial':
-            inputForFiModel = createDataForSecondModelPrediction(data['Financial'], df[df.category == "Financial"].replaced_by.values)
-            finalBestOutput = get_fi_model_output(inputForFiModel,df[df.category == "Financial"].original_skill.values)
-        elif list(data.keys())[0] == 'HCM':
-            inputForFiModel = createDataForSecondModelPrediction(data['HCM'], df[df.category == "HCM"].replaced_by.values)
-            finalBestOutput = get_hcm_model_output(inputForFiModel,df[df.category == "HCM"].original_skill.values)
-        elif list(data.keys())[0] == 'Hybris':
-            inputForFiModel = createDataForSecondModelPrediction(data['Hybris'], df[df.category == "Hybris"].replaced_by.values)
-            finalBestOutput = get_hybris_model_output(inputForFiModel,df[df.category == "Hybris"].original_skill.values)
+    finalBestOutputs = {}
+    for keyId,data in modelInputs.items():
+        if data:                
+            if list(data.keys())[0] == 'BI Tools':
+                inputForBiModel = createDataForSecondModelPrediction(data['BI Tools'], df[df.category == "BI Tools"].replaced_by.values)
+                finalBestOutput = get_bi_model_output(inputForBiModel,df[df.category == "BI Tools"].original_skill.values)
+            elif list(data.keys())[0] == 'Financial':
+                inputForFiModel = createDataForSecondModelPrediction(data['Financial'], df[df.category == "Financial"].replaced_by.values)
+                finalBestOutput = get_fi_model_output(inputForFiModel,df[df.category == "Financial"].original_skill.values)
+            elif list(data.keys())[0] == 'HCM':
+                inputForFiModel = createDataForSecondModelPrediction(data['HCM'], df[df.category == "HCM"].replaced_by.values)
+                finalBestOutput = get_hcm_model_output(inputForFiModel,df[df.category == "HCM"].original_skill.values)
+            elif list(data.keys())[0] == 'Hybris':
+                inputForFiModel = createDataForSecondModelPrediction(data['Hybris'], df[df.category == "Hybris"].replaced_by.values)
+                finalBestOutput = get_hybris_model_output(inputForFiModel,df[df.category == "Hybris"].original_skill.values)
+            else:
+                finalBestOutput = [f'Max skill found in {list(data.keys())[0]} category, which is not implemented yet!']
+            finalBestOutputs[keyId] = finalBestOutput
         else:
-            finalBestOutput = [f'{list(data.keys())[0]} category is not implemented yet!']
-        finalBestOutputs.append(finalBestOutput)
+            finalBestOutputs[keyId] = ['No skill found!!']
     return finalBestOutputs
 '''
 def clean_data_for_second_model(dataPath, pattern_keywords):
