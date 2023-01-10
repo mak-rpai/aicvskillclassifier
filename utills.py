@@ -15,6 +15,7 @@ from bokeh.transform import factor_cmap
 from bokeh.models import ColumnDataSource
 from bokeh.plotting import figure
 from math import pi
+import streamlit as st
 #import operator
 
 
@@ -77,24 +78,40 @@ def get_hcm_model_output(data, originalHCMSkillList):
     with open('./models/HCMModelBest.pkl' , 'rb') as f:
         biModel = pickle.load(f)
         predict = biModel.predict(data)
+        if all(predict[0]==0):
+            predict[0][np.argmax(data)]=1
+        else:
+            pass
         predictedSkillList = [" , ".join(originalHCMSkillList[row.astype(int).astype(np.bool)]) for row in predict]
     return predictedSkillList
 def get_hybris_model_output(data, originalHybrisSkillList):
     with open('./models/HybrisModelBest.pkl' , 'rb') as f:
         biModel = pickle.load(f)
         predict = biModel.predict(data)
+        if all(predict[0]==0):
+            predict[0][np.argmax(data)]=1
+        else:
+            pass
         predictedSkillList = [" , ".join(originalHybrisSkillList[row.astype(int).astype(np.bool)]) for row in predict]
     return predictedSkillList
 def get_bi_model_output(data, originalBiSkillList):
     with open('./models/BiModelBest.pkl' , 'rb') as f:
         biModel = pickle.load(f)
         predict = biModel.predict(data)
+        if all(predict[0]==0):
+            predict[0][np.argmax(data)]=1
+        else:
+            pass
         predictedSkillList = [" , ".join(originalBiSkillList[row.astype(int).astype(np.bool)]) for row in predict]
     return predictedSkillList
 def get_fi_model_output(data, originalFiSkillList):
     with open('./models/FiModelBest.pkl' , 'rb') as f:
         fiModel = pickle.load(f)
         predict = fiModel.predict(data)
+        if all(predict[0]==0):
+            predict[0][np.argmax(data)]=1
+        else:
+            pass
         predictedSkillList = [" , ".join(originalFiSkillList[row.astype(int).astype(np.bool)]) for row in predict]
     return predictedSkillList
 

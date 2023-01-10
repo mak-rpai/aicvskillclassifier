@@ -113,6 +113,7 @@ elif st.session_state["authentication_status"]:
             pass
            
     elif selected_option =='Multiple Files':
+        display_option = st.sidebar.selectbox(label = "Choose result display option:", options=["Show all", "Only 100% Match", "Not 100% Match"])
         cvFiles = cont.file_uploader("Select CV(s) :", type='.docx', accept_multiple_files=True)
         button = cont.button("Analyze")
         
@@ -122,13 +123,34 @@ elif st.session_state["authentication_status"]:
             finalBestOutput = utills.select_model_and_produce_results(modelInputs,df)
             st.subheader('Analyzed Results:')
             for recordId, result in finalBestOutput.items():
-                st.write("Record Id: ", recordId)
-                st.write('Predicted skills by second model: ',", ".join(finalBestOutput[recordId]))
-                trueTarget = trueTargets.get(recordId)
-                if trueTarget:
-                    st.write('True skills: ',trueTarget)
+                if display_option == "Show all":
+                    st.write("Record Id: ", recordId)
+                    st.write('Predicted skills by second model: ',",".join(result))
+                    trueTarget = trueTargets.get(recordId)
+                    if trueTarget:
+                        st.write('True skills: ',",".join(trueTarget))
+                    else:
+                        st.write('True skill(s) is unknown.')
+                elif display_option == "Only 100% Match":
+                    trueTarget = trueTargets.get(recordId)
+                    if set(trueTarget) == set(result):
+                        st.write("Record Id: ", recordId)
+                        st.write('Predicted skills by second model: ',",".join(result))
+                        st.write('True skills: ',",".join(trueTarget))
+                    else:
+                        pass
                 else:
-                    st.write('True skill(s) is unknown.')
+                    trueTarget = trueTargets.get(recordId)
+                    if set(trueTarget) != set(result):
+                        st.write("Record Id: ", recordId)
+                        st.write('Predicted skills by second model: ',",".join(result))
+                        if trueTarget:
+                            st.write('True skills: ',",".join(trueTarget))
+                        else:
+                            st.write('True skill(s) is unknown.')
+                    else:
+                        pass
+
         elif not cvFiles and button:
             st.warning('No file is choosen!! Please upload file(s) in .docx format', icon="⚠️")
         else:
