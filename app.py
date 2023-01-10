@@ -122,8 +122,8 @@ elif st.session_state["authentication_status"]:
             modelInputs = utills.divide_categories(skillDict, df, categories)
             finalBestOutput = utills.select_model_and_produce_results(modelInputs,df)
             st.subheader('Analyzed Results:')
-            for recordId, result in finalBestOutput.items():
-                if display_option == "Show all":
+            if display_option == "Show all":
+                for recordId, result in finalBestOutput.items():
                     st.write("Record Id: ", recordId)
                     st.write('Predicted skills by second model: ',",".join(result))
                     trueTarget = trueTargets.get(recordId)
@@ -131,7 +131,8 @@ elif st.session_state["authentication_status"]:
                         st.write('True skills: ',",".join(trueTarget))
                     else:
                         st.write('True skill(s) is unknown.')
-                elif display_option == "Only 100% Match":
+            elif display_option == "Only 100% Match":
+                for recordId, result in finalBestOutput.items():
                     trueTarget = trueTargets.get(recordId)
                     if set(trueTarget) == set(result):
                         st.write("Record Id: ", recordId)
@@ -139,7 +140,8 @@ elif st.session_state["authentication_status"]:
                         st.write('True skills: ',",".join(trueTarget))
                     else:
                         pass
-                else:
+            else:
+                for recordId, result in finalBestOutput.items():
                     trueTarget = trueTargets.get(recordId)
                     if set(trueTarget) != set(result):
                         st.write("Record Id: ", recordId)
