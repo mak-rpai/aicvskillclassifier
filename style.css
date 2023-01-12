@@ -1,3 +1,7 @@
 #MainMenu{
     visibility: hidden;
 }
+.matchedSkills{
+    color: green;
+    font-weight: 600;
+}

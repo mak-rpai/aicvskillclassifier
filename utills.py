@@ -82,7 +82,7 @@ def get_hcm_model_output(data, originalHCMSkillList):
             predict[0][np.argmax(data)]=1
         else:
             pass
-        predictedSkillList = [" , ".join(originalHCMSkillList[row.astype(int).astype(np.bool)]) for row in predict]
+        predictedSkillList = list(originalHCMSkillList[predict[0].astype(int).astype(np.bool)])
     return predictedSkillList
 def get_hybris_model_output(data, originalHybrisSkillList):
     with open('./models/HybrisModelBest.pkl' , 'rb') as f:
@@ -92,7 +92,7 @@ def get_hybris_model_output(data, originalHybrisSkillList):
             predict[0][np.argmax(data)]=1
         else:
             pass
-        predictedSkillList = [" , ".join(originalHybrisSkillList[row.astype(int).astype(np.bool)]) for row in predict]
+        predictedSkillList = list(originalHybrisSkillList[predict[0].astype(int).astype(np.bool)])
     return predictedSkillList
 def get_bi_model_output(data, originalBiSkillList):
     with open('./models/BiModelBest.pkl' , 'rb') as f:
@@ -102,7 +102,7 @@ def get_bi_model_output(data, originalBiSkillList):
             predict[0][np.argmax(data)]=1
         else:
             pass
-        predictedSkillList = [" , ".join(originalBiSkillList[row.astype(int).astype(np.bool)]) for row in predict]
+        predictedSkillList = list(originalBiSkillList[predict[0].astype(int).astype(np.bool)])
     return predictedSkillList
 def get_fi_model_output(data, originalFiSkillList):
     with open('./models/FiModelBest.pkl' , 'rb') as f:
@@ -112,7 +112,7 @@ def get_fi_model_output(data, originalFiSkillList):
             predict[0][np.argmax(data)]=1
         else:
             pass
-        predictedSkillList = [" , ".join(originalFiSkillList[row.astype(int).astype(np.bool)]) for row in predict]
+        predictedSkillList = list(originalFiSkillList[predict[0].astype(int).astype(np.bool)])
     return predictedSkillList
 
 def generate_figure(entities, titleText):
@@ -153,27 +153,46 @@ def divide_categories(dataDict, df, categories, truncatedValue=1):
             finalDataDict[keyId] = {}
     return finalDataDict
 
-def select_model_and_produce_results(modelInputs, df):
+def select_model_and_produce_results(modelInputs, df,trueTargets):
     finalBestOutputs = {}
     for keyId,data in modelInputs.items():
+        trueTarget = trueTargets.get(keyId)
+        
         if data:                
             if list(data.keys())[0] == 'BI Tools':
                 inputForBiModel = createDataForSecondModelPrediction(data['BI Tools'], df[df.category == "BI Tools"].replaced_by.values)
                 finalBestOutput = get_bi_model_output(inputForBiModel,df[df.category == "BI Tools"].original_skill.values)
+                if trueTarget:
+                    truncatedTarget = [target for target in trueTarget if target in df[df.category == "BI Tools"].original_skill.values]
+                else:
+                    truncatedTarget =['unknown']
             elif list(data.keys())[0] == 'Financial':
                 inputForFiModel = createDataForSecondModelPrediction(data['Financial'], df[df.category == "Financial"].replaced_by.values)
                 finalBestOutput = get_fi_model_output(inputForFiModel,df[df.category == "Financial"].original_skill.values)
+                if trueTarget:
+                    truncatedTarget = [target for target in trueTarget if target in df[df.category == "Financial"].original_skill.values]
+                else:
+                    truncatedTarget =['unknown']
             elif list(data.keys())[0] == 'HCM':
                 inputForFiModel = createDataForSecondModelPrediction(data['HCM'], df[df.category == "HCM"].replaced_by.values)
                 finalBestOutput = get_hcm_model_output(inputForFiModel,df[df.category == "HCM"].original_skill.values)
+                if trueTarget:
+                    truncatedTarget = [target for target in trueTarget if target in df[df.category == "HCM"].original_skill.values]
+                else:
+                    truncatedTarget =['unknown']
             elif list(data.keys())[0] == 'Hybris':
                 inputForFiModel = createDataForSecondModelPrediction(data['Hybris'], df[df.category == "Hybris"].replaced_by.values)
                 finalBestOutput = get_hybris_model_output(inputForFiModel,df[df.category == "Hybris"].original_skill.values)
+                if trueTarget:
+                    truncatedTarget = [target for target in trueTarget if target in df[df.category == "Hybris"].original_skill.values]
+                else:
+                    truncatedTarget =['unknown']
             else:
                 finalBestOutput = [f'Max skill found in {list(data.keys())[0]} category, which is not implemented yet!']
-            finalBestOutputs[keyId] = finalBestOutput
+                truncatedTarget =['Not implemented!']
+            finalBestOutputs[keyId] = {'predSkills':finalBestOutput,'trunTarget':truncatedTarget, 'trueTarget':trueTarget}
         else:
-            finalBestOutputs[keyId] = ['No skill found!!']
+            finalBestOutputs[keyId] = {'predSkills':['No skill found!!'],'trunTarget':trueTarget, 'trueTarget':trueTarget}
     return finalBestOutputs
 '''
 def clean_data_for_second_model(dataPath, pattern_keywords):

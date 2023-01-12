@@ -80,7 +80,7 @@ elif st.session_state["authentication_status"]:
             skillDict = utills.make_dataset_regex(cvFile, pattern_keywords,multiple=False)
             if skillDict[list(skillDict.keys())[0]]:
                 modelInputs = utills.divide_categories(skillDict, df, categories)
-                finalBestOutput = utills.select_model_and_produce_results(modelInputs,df)
+                finalBestOutput = utills.select_model_and_produce_results(modelInputs,df,trueTargets)
                 plotSkills = OrderedDict(sorted(skillDict[list(skillDict.keys())[0]].items(), key=lambda x: x[1],reverse=True))
                 with st.container():
                     textCol, graphCol = st.columns(2)
@@ -95,12 +95,9 @@ elif st.session_state["authentication_status"]:
                         selectedSkillDict.update(modelInputs[list(modelInputs.keys())[0]][list(modelInputs[list(modelInputs.keys())[0]].keys())[0]])
                         st.write("Input to selected second model:", selectedSkillDict)
                         #st.write("Skills found :", finalBestOutput)
-                        st.write("Predicted skills by second model: ",", ".join(finalBestOutput[list(skillDict.keys())[0]]))
-                        trueTarget = trueTargets.get(list(skillDict.keys())[0])
-                        if trueTarget:
-                            st.write('True skills: ',trueTarget)
-                        else:
-                            st.write('True skill(s) is unknown.')
+                        st.write("Predicted skills by second model: ",", ".join(finalBestOutput[list(skillDict.keys())[0]]['predSkills']))
+                        #st.write("True skills: ",", ".join(finalBestOutput[list(skillDict.keys())[0]]['trunTarget']))
+                        st.write("True skills: ",", ".join(finalBestOutput[list(skillDict.keys())[0]]['trueTarget']))
                     with graphCol:
                         st.subheader('Visualized Results (First model output):')
                         #st.write("Skills list : ",skillDict)
@@ -120,36 +117,34 @@ elif st.session_state["authentication_status"]:
         if cvFiles and button:
             skillDict = utills.make_dataset_regex(cvFiles, pattern_keywords,multiple=True)
             modelInputs = utills.divide_categories(skillDict, df, categories)
-            finalBestOutput = utills.select_model_and_produce_results(modelInputs,df)
+            finalBestOutput = utills.select_model_and_produce_results(modelInputs,df,trueTargets)
             st.subheader('Analyzed Results:')
             if display_option == "Show all":
                 for recordId, result in finalBestOutput.items():
+                    intersectedList = list(set(result['trunTarget']) & set(result['predSkills']))
+                    formatedTarget = [f'<span class="matchedSkills">{skill}</span>' if skill in intersectedList else f'{skill}' for skill in result['trunTarget']]
+                    formatedPredict = [f'<span class="matchedSkills">{skill}</span>' if skill in intersectedList else f'{skill}' for skill in result['predSkills']]
                     st.write("Record Id: ", recordId)
-                    st.write('Predicted skills by second model: ',",".join(result))
-                    trueTarget = trueTargets.get(recordId)
-                    if trueTarget:
-                        st.write('True skills: ',",".join(trueTarget))
-                    else:
-                        st.write('True skill(s) is unknown.')
+                    st.markdown('Predicted skills by second model: '+", ".join(formatedPredict), unsafe_allow_html=True)
+                    st.markdown('True skills: '+", ".join(formatedTarget), unsafe_allow_html=True)
+                    
             elif display_option == "Only 100% Match":
                 for recordId, result in finalBestOutput.items():
-                    trueTarget = trueTargets.get(recordId)
-                    if set(trueTarget) == set(result):
+                    if set(result['trunTarget']) == set(result['predSkills']):
                         st.write("Record Id: ", recordId)
-                        st.write('Predicted skills by second model: ',",".join(result))
-                        st.write('True skills: ',",".join(trueTarget))
+                        st.write('Predicted skills by second model: ',", ".join(result['predSkills']))
+                        st.write('True skills: ',", ".join(result['trunTarget']))
                     else:
                         pass
             else:
                 for recordId, result in finalBestOutput.items():
-                    trueTarget = trueTargets.get(recordId)
-                    if set(trueTarget) != set(result):
+                    if set(result['trunTarget']) != set(result['predSkills']):
+                        intersectedList = list(set(result['trunTarget']) & set(result['predSkills']))
+                        formatedTarget = [f'<span class="matchedSkills">{skill}</span>' if skill in intersectedList else f'{skill}' for skill in result['trunTarget']]
+                        formatedPredict = [f'<span class="matchedSkills">{skill}</span>' if skill in intersectedList else f'{skill}' for skill in result['predSkills']]
                         st.write("Record Id: ", recordId)
-                        st.write('Predicted skills by second model: ',",".join(result))
-                        if trueTarget:
-                            st.write('True skills: ',",".join(trueTarget))
-                        else:
-                            st.write('True skill(s) is unknown.')
+                        st.markdown('Predicted skills by second model: '+", ".join(formatedPredict), unsafe_allow_html=True)
+                        st.markdown('True skills: '+", ".join(formatedTarget), unsafe_allow_html=True)
                     else:
                         pass
 
