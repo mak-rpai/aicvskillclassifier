@@ -64,7 +64,7 @@ elif st.session_state["authentication_status"]:
 
     # Load true skill dictionary
     with open('./data/TrueTargetDict.json') as f:
-        trueTargets = json.loads(f.read())
+        trueTargetDict = json.loads(f.read())
     # functon to convert list to dictionary
     def lst_dict(lst):
         return {item: 0 for item in lst}
@@ -80,7 +80,7 @@ elif st.session_state["authentication_status"]:
             skillDict = utills.make_dataset_regex(cvFile, pattern_keywords,multiple=False)
             if skillDict[list(skillDict.keys())[0]]:
                 modelInputs = utills.divide_categories(skillDict, df, categories)
-                finalBestOutput = utills.select_model_and_produce_results(modelInputs,df,trueTargets)
+                finalBestOutput = utills.select_model_and_produce_results(modelInputs,df,trueTargetDict)
                 plotSkills = OrderedDict(sorted(skillDict[list(skillDict.keys())[0]].items(), key=lambda x: x[1],reverse=True))
                 with st.container():
                     textCol, graphCol = st.columns(2)
@@ -117,7 +117,7 @@ elif st.session_state["authentication_status"]:
         if cvFiles and button:
             skillDict = utills.make_dataset_regex(cvFiles, pattern_keywords,multiple=True)
             modelInputs = utills.divide_categories(skillDict, df, categories)
-            finalBestOutput = utills.select_model_and_produce_results(modelInputs,df,trueTargets)
+            finalBestOutput = utills.select_model_and_produce_results(modelInputs,df,trueTargetDict)
             st.subheader('Analyzed Results:')
             if display_option == "Show all":
                 for recordId, result in finalBestOutput.items():
