@@ -96,8 +96,8 @@ elif st.session_state["authentication_status"]:
                         st.write("Input to selected second model:", selectedSkillDict)
                         #st.write("Skills found :", finalBestOutput)
                         st.write("Predicted skills by second model: ",", ".join(finalBestOutput[list(skillDict.keys())[0]]['predSkills']))
-                        #st.write("True skills: ",", ".join(finalBestOutput[list(skillDict.keys())[0]]['trunTarget']))
-                        st.write("True skills: ",", ".join(finalBestOutput[list(skillDict.keys())[0]]['trueTarget']))
+                        st.write("True skills: ",", ".join(finalBestOutput[list(skillDict.keys())[0]]['trunTarget']))
+                        #st.write("True skills: ",", ".join(finalBestOutput[list(skillDict.keys())[0]]['trueTarget']))
                     with graphCol:
                         st.subheader('Visualized Results (First model output):')
                         #st.write("Skills list : ",skillDict)
