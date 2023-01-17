@@ -81,27 +81,33 @@ elif st.session_state["authentication_status"]:
             if skillDict[list(skillDict.keys())[0]]:
                 modelInputs = utills.divide_categories(skillDict, df, categories)
                 finalBestOutput = utills.select_model_and_produce_results(modelInputs,df,trueTargets)
-                plotSkills = OrderedDict(sorted(skillDict[list(skillDict.keys())[0]].items(), key=lambda x: x[1],reverse=True))
-                with st.container():
-                    textCol, graphCol = st.columns(2)
-                    with textCol:
-                        st.subheader('Analyzed Results:')
-                        st.write("Record Id: ", list(skillDict.keys())[0])
-                        #st.write(modelInputs)
-                        st.markdown(f'Max skills found in <span style="color:Blue">{list(modelInputs[list(modelInputs.keys())[0]].keys())[0]} </span> category', unsafe_allow_html=True)
-                        st.write("Selected second Model:",list(modelInputs[list(modelInputs.keys())[0]].keys())[0])
-                        selectedSkillList = df[df.category == list(modelInputs[list(modelInputs.keys())[0]].keys())[0]].replaced_by.values
-                        selectedSkillDict = lst_dict(selectedSkillList)
-                        selectedSkillDict.update(modelInputs[list(modelInputs.keys())[0]][list(modelInputs[list(modelInputs.keys())[0]].keys())[0]])
-                        st.write("Input to selected second model:", selectedSkillDict)
-                        #st.write("Skills found :", finalBestOutput)
-                        st.write("Predicted skills by second model: ",", ".join(finalBestOutput[list(skillDict.keys())[0]]['predSkills']))
-                        st.write("True skills: ",", ".join(finalBestOutput[list(skillDict.keys())[0]]['trunTarget']))
-                        #st.write("True skills: ",", ".join(finalBestOutput[list(skillDict.keys())[0]]['trueTarget']))
-                    with graphCol:
-                        st.subheader('Visualized Results (First model output):')
-                        #st.write("Skills list : ",skillDict)
-                        st.bokeh_chart(utills.generate_figure(plotSkills, 'All skills found on Record Id:  '+list(skillDict.keys())[0]), use_container_width=True)
+                if finalBestOutput[list(finalBestOutput.keys())[0]]["predSkills"][0] != 'No skill found!!':
+                    plotSkills = OrderedDict(sorted(skillDict[list(skillDict.keys())[0]].items(), key=lambda x: x[1],reverse=True))
+                    with st.container():
+                        textCol, graphCol = st.columns(2)
+                        with textCol:
+                            st.subheader('Analyzed Results:')
+                            st.write("Record Id: ", list(skillDict.keys())[0])
+                            #st.write(modelInputs)
+                            st.markdown(f'Max skills found in <span style="color:Blue">{list(modelInputs[list(modelInputs.keys())[0]].keys())[0]} </span> category', unsafe_allow_html=True)
+                            st.write("Selected second Model:",list(modelInputs[list(modelInputs.keys())[0]].keys())[0])
+                            selectedSkillList = df[df.category == list(modelInputs[list(modelInputs.keys())[0]].keys())[0]].replaced_by.values
+                            selectedSkillDict = lst_dict(selectedSkillList)
+                            selectedSkillDict.update(modelInputs[list(modelInputs.keys())[0]][list(modelInputs[list(modelInputs.keys())[0]].keys())[0]])
+                            st.write("Input to selected second model:", selectedSkillDict)
+                            #st.write("Skills found :", finalBestOutput)
+                            st.write("Predicted skills by second model: ",", ".join(finalBestOutput[list(skillDict.keys())[0]]['predSkills']))
+                            st.write("True skills: ",", ".join(finalBestOutput[list(skillDict.keys())[0]]['trunTarget']))
+                            #st.write("True skills: ",", ".join(finalBestOutput[list(skillDict.keys())[0]]['trueTarget']))
+                        with graphCol:
+                            st.subheader('Visualized Results (First model output):')
+                            #st.write("Skills list : ",skillDict)
+                            st.bokeh_chart(utills.generate_figure(plotSkills, 'All skills found on Record Id:  '+list(skillDict.keys())[0]), use_container_width=True)
+                else:
+                    st.subheader('Analyzed Results:')
+                    st.write("Record Id: ", list(finalBestOutput.keys())[0])
+                    st.write('Predicted skills by second model: ',", ".join(finalBestOutput[list(finalBestOutput.keys())[0]]["predSkills"]))
+                    st.write('True skills: ',", ".join(finalBestOutput[list(finalBestOutput.keys())[0]]['trunTarget']))
             else:
                 st.write("No skill found in Record Id: ", list(skillDict.keys())[0])
         elif cvFile is None and button:

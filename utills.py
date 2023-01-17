@@ -148,7 +148,10 @@ def divide_categories(dataDict, df, categories, truncatedValue=1):
                         pass
                 except:
                     pass
-            finalDataDict[keyId] = catgoriesArray[np.argmax(countEachCategory)]
+            if len(countEachCategory)>0:
+                finalDataDict[keyId] = catgoriesArray[np.argmax(countEachCategory)]
+            else:
+                finalDataDict[keyId] = {}
         else:
             finalDataDict[keyId] = {}
     return finalDataDict
