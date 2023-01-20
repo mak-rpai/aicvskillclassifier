@@ -38,23 +38,23 @@ def replace_matched_pattern_regex(pattern_keywords, content):
     content = re.sub("\s+", " ", content)
     return content
 
-def extract_all_skill(file,pattern_keywords):
+def extract_all_skill(file, replace_patterns, search_patterns):
     all_skills=[]
-    content = replace_matched_pattern_regex(pattern_keywords,docx2txt.process(file))    
-    for item in pattern_keywords:
-        allMatch = re.finditer(r"\b"+item[1]+r"\b", content)
+    content = replace_matched_pattern_regex(replace_patterns,docx2txt.process(file))    
+    for item in search_patterns:
+        allMatch = re.finditer(item[0], content)
         if(allMatch!=[]):
             for match in allMatch:
                 all_skills.append(item[1])
     return all_skills
-def make_dataset_regex(fileNames,pattern_keywords, multiple=False):
+def make_dataset_regex(fileNames,replace_patterns, search_patterns, multiple=False):
     datasets = {}
     if multiple:
         for file in fileNames:
-            all_skills = extract_all_skill(file,pattern_keywords)
+            all_skills = extract_all_skill(file,replace_patterns, search_patterns)
             datasets[file.name[:-5]]= dict(Counter(all_skills))
     else:
-        all_skills = extract_all_skill(fileNames,pattern_keywords)
+        all_skills = extract_all_skill(fileNames,replace_patterns, search_patterns)
         datasets[fileNames.name[:-5]]= dict(Counter(all_skills))
     return datasets
 
@@ -105,6 +105,7 @@ def get_bi_model_output(data, originalBiSkillList):
         predictedSkillList = list(originalBiSkillList[predict[0].astype(int).astype(np.bool)])
     return predictedSkillList
 def get_fi_model_output(data, originalFiSkillList):
+    #with open('./models/FiModelBest_added_sinthetic_data.pkl' , 'rb') as f:
     with open('./models/FiModelBest.pkl' , 'rb') as f:
         fiModel = pickle.load(f)
         predict = fiModel.predict(data)
@@ -139,7 +140,7 @@ def divide_categories(dataDict, df, categories, truncatedValue=1):
             for catg in categories:
                 try:
                     item = {
-                        k: v for k, v in data.items() if (k in df[df.category == catg].replaced_by.values and v > truncatedValue)
+                        k: v for k, v in data.items() if (k in df[df.category == catg].original_skill.values and v > truncatedValue)
                     }
                     if any(item):
                         catgoriesArray.append({catg: item})
@@ -163,28 +164,28 @@ def select_model_and_produce_results(modelInputs, df,trueTargets):
         
         if data:                
             if list(data.keys())[0] == 'BI Tools':
-                inputForBiModel = createDataForSecondModelPrediction(data['BI Tools'], df[df.category == "BI Tools"].replaced_by.values)
+                inputForBiModel = createDataForSecondModelPrediction(data['BI Tools'], df[df.category == "BI Tools"].original_skill.values)
                 finalBestOutput = get_bi_model_output(inputForBiModel,df[df.category == "BI Tools"].original_skill.values)
                 if trueTarget:
                     truncatedTarget = [target for target in trueTarget if target in df[df.category == "BI Tools"].original_skill.values]
                 else:
                     truncatedTarget =['unknown']
             elif list(data.keys())[0] == 'Financial':
-                inputForFiModel = createDataForSecondModelPrediction(data['Financial'], df[df.category == "Financial"].replaced_by.values)
+                inputForFiModel = createDataForSecondModelPrediction(data['Financial'], df[df.category == "Financial"].original_skill.values)
                 finalBestOutput = get_fi_model_output(inputForFiModel,df[df.category == "Financial"].original_skill.values)
                 if trueTarget:
                     truncatedTarget = [target for target in trueTarget if target in df[df.category == "Financial"].original_skill.values]
                 else:
                     truncatedTarget =['unknown']
             elif list(data.keys())[0] == 'HCM':
-                inputForFiModel = createDataForSecondModelPrediction(data['HCM'], df[df.category == "HCM"].replaced_by.values)
+                inputForFiModel = createDataForSecondModelPrediction(data['HCM'], df[df.category == "HCM"].original_skill.values)
                 finalBestOutput = get_hcm_model_output(inputForFiModel,df[df.category == "HCM"].original_skill.values)
                 if trueTarget:
                     truncatedTarget = [target for target in trueTarget if target in df[df.category == "HCM"].original_skill.values]
                 else:
                     truncatedTarget =['unknown']
             elif list(data.keys())[0] == 'Hybris':
-                inputForFiModel = createDataForSecondModelPrediction(data['Hybris'], df[df.category == "Hybris"].replaced_by.values)
+                inputForFiModel = createDataForSecondModelPrediction(data['Hybris'], df[df.category == "Hybris"].original_skill.values)
                 finalBestOutput = get_hybris_model_output(inputForFiModel,df[df.category == "Hybris"].original_skill.values)
                 if trueTarget:
                     truncatedTarget = [target for target in trueTarget if target in df[df.category == "Hybris"].original_skill.values]

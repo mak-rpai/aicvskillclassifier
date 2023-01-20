@@ -53,14 +53,20 @@ elif st.session_state["authentication_status"]:
     authenticator.logout("Logout", "sidebar")
     # Add a radio button widget to the sidebar
     selected_option = st.sidebar.radio(label = "Choose a processing option:", options=["Single File", "Multiple Files"]) 
-    df = pd.read_csv(
-    "./data/more_than_15.csv",
+    df_replace = pd.read_csv(
+    "./data/more_than_15_replace.csv",
     sep=";",
     encoding="latin1",
-    usecols=["category", "regex_pattern", "replaced_by", "original_skill"],
-)
-    pattern_keywords = list(zip(df["regex_pattern"], df["replaced_by"], df["original_skill"]))
-    categories = list(df.category.unique())
+    usecols=["regex_pattern", "replaced_by"],)
+    df_search = pd.read_csv(
+        "./data/more_than_15_search.csv",
+        sep=";",
+        encoding="latin1",
+        usecols=["category", "regex_pattern", "original_skill"],
+    )
+    replace_patterns = list(zip(df_replace["regex_pattern"], df_replace["replaced_by"]))
+    search_patterns = list(zip(df_search["regex_pattern"], df_search["original_skill"]))
+    categories = list(df_search.category.unique())
 
     # Load true skill dictionary
     with open('./data/TrueTargetDict.json') as f:
@@ -77,10 +83,10 @@ elif st.session_state["authentication_status"]:
         button = cont.button("Analyze")
         
         if cvFile is not None and button:
-            skillDict = utills.make_dataset_regex(cvFile, pattern_keywords,multiple=False)
+            skillDict = utills.make_dataset_regex(cvFile, replace_patterns, search_patterns, multiple=False)
             if skillDict[list(skillDict.keys())[0]]:
-                modelInputs = utills.divide_categories(skillDict, df, categories)
-                finalBestOutput = utills.select_model_and_produce_results(modelInputs,df,trueTargets)
+                modelInputs = utills.divide_categories(skillDict, df_search, categories)
+                finalBestOutput = utills.select_model_and_produce_results(modelInputs,df_search,trueTargets)
                 if finalBestOutput[list(finalBestOutput.keys())[0]]["predSkills"][0] != 'No skill found!!':
                     plotSkills = OrderedDict(sorted(skillDict[list(skillDict.keys())[0]].items(), key=lambda x: x[1],reverse=True))
                     with st.container():
@@ -91,7 +97,7 @@ elif st.session_state["authentication_status"]:
                             #st.write(modelInputs)
                             st.markdown(f'Max skills found in <span style="color:Blue">{list(modelInputs[list(modelInputs.keys())[0]].keys())[0]} </span> category', unsafe_allow_html=True)
                             st.write("Selected second Model:",list(modelInputs[list(modelInputs.keys())[0]].keys())[0])
-                            selectedSkillList = df[df.category == list(modelInputs[list(modelInputs.keys())[0]].keys())[0]].replaced_by.values
+                            selectedSkillList = df_search[df_search.category == list(modelInputs[list(modelInputs.keys())[0]].keys())[0]].original_skill.values
                             selectedSkillDict = lst_dict(selectedSkillList)
                             selectedSkillDict.update(modelInputs[list(modelInputs.keys())[0]][list(modelInputs[list(modelInputs.keys())[0]].keys())[0]])
                             st.write("Input to selected second model:", selectedSkillDict)
@@ -121,9 +127,9 @@ elif st.session_state["authentication_status"]:
         button = cont.button("Analyze")
         
         if cvFiles and button:
-            skillDict = utills.make_dataset_regex(cvFiles, pattern_keywords,multiple=True)
-            modelInputs = utills.divide_categories(skillDict, df, categories)
-            finalBestOutput = utills.select_model_and_produce_results(modelInputs,df,trueTargets)
+            skillDict = utills.make_dataset_regex(cvFiles, replace_patterns, search_patterns, multiple=True)
+            modelInputs = utills.divide_categories(skillDict, df_search, categories)
+            finalBestOutput = utills.select_model_and_produce_results(modelInputs,df_search,trueTargets)
             st.subheader('Analyzed Results:')
             if display_option == "Show all":
                 for recordId, result in finalBestOutput.items():
