@@ -1,38 +1,76 @@
 category;search_tags;regex_pattern;original_skill
+BI Tools;Cloud Analytics;\b([Cc]loud\s[Aa]nalytics|[Aa]nalytics\s[Cc]loud)\b;Analytics Cloud
 BI Tools;BI?IP;\bBIIP\b;BI Integrated Planner
-BI Tools;BI?BW;\bBIBW\b;BI/BW
+BI Tools;BI?BW;\bBIBW\b;BI / BW
 BI Tools;BO - Data Services (BODS);\b(B0\s?[\/\-]*\s?DS)\b;BO - Data Services (BODS)
 BI Tools;BO - Design Studio;\b(Design\s?[\/\-]*\s?Studio)\b;BO - Design Studio
-BI Tools;BO / Business Objects;\b(BO|[Bb]usiness\s[Oo]bjects)\b;BO/Business Objects
-BI Tools;Cloud Analytics;\b([Cc]loud\s[Aa]nalytics|[Aa]nalytics\s[Cc]loud)\b;Analytics Cloud
+BI Tools;BO / Business Objects;\b(BO|[Bb]usiness\s[Oo]bjects)\b;BO / Business Objects
 BI Tools;BPC (Outlooksoft);\bBPC\b;BPC (Outlooksoft)
 BI Tools;Lumira 2.X;\b[Ll]umira\b;Lumira 2.X
-Hybris;Hybris Developer;\b(([Hh]ybris[\/\-\s]?|C4C\s?)[Dd]eveloper)\b;Hybris / C/4 HANA Developer
+Financial;CI - Convergent Invoicing;\bCI\b;CI - Convergent Invoicing
+Financial;CO;\bCO\b;CO
+Financial;Concur;\b([Cc]oncur)\b;Concur
+Financial;CO-PC;\b(COPC|[Pp]roduct\s[Cc]osting|[Pp]roduct\s[Cc]ost)\b;CO-PC
+Financial;CO/PS;\bCOPS\b;CO/PS
+Financial;FI;\b(FI|IFRS|[Ff]inance|([Gg]eneral|[Ss]pecial)\s[Ll]edgers?|[Aa]ccounts?\s([Pp]ayables?|[Rr]eceivables?))\b;FI
+Financial;FI-CA;\bFICA\b;IS-U FICA
+Financial;FM - Funds Management;\b(FM|[Ff]unds?\s[Mm]anagement)\b;FM Funds Management
+Financial;FSCM - Financial Supply Chain Management;\b(F[\/\-\&\s]?SCM|[Ff]inancial\s[Ss]upply\s[Cc]hain\s[Mm]anagement)\b;FSCM - Financial Supply Chain Management
+Financial;JVA (Joint Venture Accounting);\b(JVA|[Jj]oint\s[Vv]enture|[Cc]utback)\b;JVA (Joint Venture Accounting)
+Financial;Treasury (TR);\b(TRM?|[Tt]reasury)\b;Treasury (TR)
+Financial;VIM;\b(VIM|[Vv]endor\s[Ii]nvoice\s[Mm]anagement)\b;VIM
+HCM;HCM;\b([Hh]uman[\/\-\s]?[Cc]apital[\/\-\s]?[Mm]anagement|HCM|HR)(?![\/\-\s]([APpLlTt]))\b;HCM
+HCM;HCM ABAP;\b(HCM[\/\-\s]?([Pp]rogramming|ABAP)|ABAP[\/\-\s]?HR)\b;HCM ABAP
+HCM;HCM Payroll;\b(HCM[\/\-\s]?(Payroll|PY|Løn)|Nettol(on|øn))\b;HCM payroll
+HCM;HCM Talent Management;\b(PA[\/\-\s]?TM|[Tt]alent\s[Mm]anagement)\b;HCM Talent Management
+HCM;HCM Time & Attendance Management;\b((HR|HCM)[\/\-\s]?TM|[Tt]ime\s[Mm]anagement)\b;HCM Time & Attendance Management
+HCM;SuccessFactors;\bSuccess\s?[\/\-\s]?Factors?\b;SuccessFactors
 Hybris;Hybris C4C;\b([Hh]ybris\sC4C|C4C|([Hh]ybris\s?([\/\-]\s?)?)?C\s?[\/\-]?\s?4[\/\-]?\s?(HANA|[Hh]ana))\b;Hybris / C/4 HANA
+Hybris;Hybris Developer;\b(([Hh]ybris[\/\-\s]?|C4C\s?)[Dd]eveloper)\b;Hybris / C/4 HANA Developer
 Hybris;Hybris Commerce;\b([Hh]ybris[\/\-\s]?[Cc]ommerce)\b;Hybris Commerce / Commerce Cloud
 Hybris;Hybris Marketing;\b([Hh]ybris[\/\-\s]?[Mm]arketing)\b;Hybris Marketing / Marketing Cloud
 Hybris;Hybris Sales;\b([Hh]ybris[\/\-\s]?[Ss]ales)\b;Hybris Sales / Sales Cloud
-Financial;CO;\bCO\b;CO
-Financial;Concur;\b([Cc]oncur)\b;Concur
-Financial;CO-PC;\bCOPC\b;CO-PC
-Financial;FI;\b(FI|[Ff]inance)\b;FI
-Financial;CI - Convergent Invoicing;\bCI\b;CI - Convergent Invoicing
-Financial;FM - Funds Mangement;\bFM\b;FM Funds Mangement
-Financial;FSCM - Financial Supply Chain Management;\bF[\/\-\&\s]?SCM\b;FSCM - Financial Supply Chain Management
-Financial;JVA (Joint Venture Accounting);\b(JVA|[Jj]oint\s[Vv]enture\s[Aa]ccounting)\b;JVA (Joint Venture Accounting)
-Financial;VIM;\bVIM\b;VIM
-Financial;Treasury (TR);\b(TRM?|[Tt]reasury)\b;Treasury (TR)
-HCM;SuccessFactors;\bSuccess\s?[\/\-\s]?Factors?\b;SuccessFactors
-HCM;HCM;\b([Hh]uman[\/\-\s]?[Cc]apital[\/\-\s]?[Mm]anagement|HCM|HR)\b;HCM
-HCM;HCM ABAP;\b(HCM[\/\-\s]?([Pp]rogramming|ABAP)|ABAP[\/\-\s]?HR)\b;HCM ABAP
-HCM;HCM Payroll;\b(HCM[\/\-\s]?(Payroll|PY|Løn)|Nettol(on|øn))\b;HCM Payroll
-HCM;HCM Talent Management;\b(PA[\/\-\s]?TM|[Tt]alent\s[Mm]anagement)\b;HCM Talent Management
-HCM;HCM Time & Attendance Management;\b((HR|HCM)[\/\-\s]?TM|[Tt]ime\s[Mm]anagement)\b;HCM Time & Attendance Management
-Supply Chain;CO/PS;\bCOPS\b;CO/PS
+Netweaver;ABAP;\bABAP\b;ABAP
+Netweaver;Basis;\b(Basis|BASIS)\b;Basis
+Netweaver;BRF+ / DSM;(\bBRF\+|DSM|BRF\s?[Pp]lus\b);BRF+ / DSM
+Netweaver;CPI - Cloud Platform Integration;\b(CPI|[Cc]loud\s[Pp]latform\s[Ii]ntegration)\b;CPI - Cloud Platform Integration
+Netweaver;Data Migration;\b([Dd]ata\s[Mm]igration)\b;Data Migration
+Netweaver;Enterprise Portal;\b([Ee]nterprise\s)?[Pp]ortal\b;Enterprise Portal
+Netweaver;Fiori;\b[Ff]iori\b;Fiori
+Netweaver;Gateway;\b[Gg]ateway\b;Gateway
+Netweaver;HCI - HANA Cloud Integration;\b(HCI|HANA\s[Cc]loud\s[Ii]ntegrat(ion|or))\b;HCI - HANA Cloud Integration
+Netweaver;Mobile;\bSAP[\/\-\&][Mm]obile\b;Mobile
+Netweaver;PI/XI;\b(PI[\/\-\&]XI|XI[\/\-\&]PI)\b;PI/XI
+Netweaver;PO - Process Orchestration;\b(PO|[Pp]rocess\s[Oo]rchestration)\b;PO - Process Orchestration
+Netweaver;PO BPM - Business Process Management;\b(BPM|PO[\/\-\&]BPM|[Bb]usiness\s[Pp]rocess\s[Mm]anagement)\b;PO BPM - Business Process Management
+Netweaver;UI5;\bUI[\/\-\&]5\b;UI5
+Netweaver;WebDynpro;\bWebDynpro\b;WebDynpro
+Netweaver;Workflow;\bWorkflow\b;Workflow
+SAP;Authorizations;\b([Aa]uthori(z|s)ations?)\b;Authorizations
+SAP;Business One;\b([Bb]usiness\s[Oo]ne)\b;Business One
+SAP;EDI;\bEDI\b;EDI
+SAP;GRC;\bGRC\b;GRC
+SAP;HANA;\b(((4|S4)([\/\-\&\s])?)?HANA)\b;HANA
+SAP;Archiving - ILM (Information Lifecycle Management);\b(ILM|[Aa]rchiving|[Ii]nformation\s[Ll]ifecycle\s[Mm]anagement)\b;ILM (Information Lifecycle Management)
+SAP;Java;\b[Jj]ava\b;Java
+SAP;LSMW;\bLSMW\b;LSMW
+SAP;OER - Object Event Repository;\b(OER|[Oo]bject\s[Ee]vent\s[Rr]epository)\b;OER - Object Event Repository
+Supply Chain;APO;\bAPO\b;APO
+Supply Chain;Ariba;\b([Aa]riba)\b;Ariba
+Supply Chain;CRM;\bCRM\b;CRM
 Supply Chain;CS / SM;\b(CS[\/\-\s]?(S|P)M)\b;CS / SM
+Supply Chain;DMS;\bDMS\b;DMS
+Supply Chain;EAM;\bEAM\b;EAM
+Supply Chain;EH&S - Health and Safety;\b(EH[\/\-\&]S|HS[\/\-\&]E)\b;EH&S - Health and Safety
 Supply Chain;eWM (extended Warehouse Management);\b(e[\/\-]?WM)\b;eWM (extended Warehouse Management)
+Supply Chain;GTS - Global Trade Services;\b(GTS|[Gg]lobal\s[Tt]rade\s[Ss]ervices?)\b;GTS - Global Trade Services
+Supply Chain;IBP - Integrated Business Planning;\bI\s?[\/\-]*B\s?[\/\-]*P\b;IBP - Integrated Business Planning
 Supply Chain;LES;\b(LES|LE)\b;LES
+Supply Chain;Master Data Governance (MDG);\b(MDG|[Mm]aster\s[Dd]ata\s[Gg]overnance)\b;Master Data Governance (MDG)
+Supply Chain;Master Data Management (MDM);\b(MDM|[Mm]aster\s[Dd]ata\s[Mm]anagement)\b;MDM
+Supply Chain;MII - Manufacturing Intelligence;\b(MII|[Mm]anufacturing\s[Ii]ntelligence)\b;MII - Manufacturing Intelligence
 Supply Chain;MM;\b([Mm]aterials\s[Mm]anagement|MM)\b;MM
+Supply Chain;PLM;\bPLM\b;PLM
 Supply Chain;PM - Plant Maintenance;\b([Pp]lant\s[Mm]anagement|PM)\b;PM - Plant Maintenance
 Supply Chain;PP;\b([Pp]roduction\s[Pp]lanning|PP)\b;PP
 Supply Chain;PPM - Project & Portfolio Management;\b(PPM|([Pp]roject\s(\&|and)\s[Pp]ortfolio\s[Mm]anagement))\b;PPM - Project & Portfolio Management
@@ -41,44 +79,7 @@ Supply Chain;PS;\b([Pp]roject\s[Ss]ystem|PS)\b;PS
 Supply Chain;QM;\b([Qq]uality\s[Mm]anagement|QM)\b;QM
 Supply Chain;SCM;\b([Ss]upply\s[Cc]hain\s[Mm]anagement|SCM)\b;SCM
 Supply Chain;SD;\b(SD|([Ss]ales\s(\&|and)\s[Dd]istributions?))\b;SD
-Supply Chain;TM - Transportation Management;\b([Tt]ransportation\s[Mm]anagement|TM)\b;TM - Transportation Management
-Supply Chain;WM;\b([Ww]arehouse\s[Mm]anagement|WM)\b;WM
-Supply Chain;IBP - Integrated Business Planning;\bI\s?[\/\-]*B\s?[\/\-]*P\b;IBP - Integrated Business Planning
-Supply Chain;Ariba;\b([Aa]riba)\b;Ariba
-Supply Chain;APO;\bAPO\b;APO
-Supply Chain;CRM;\bCRM\b;CRM
-Supply Chain;Master Data Governance (MDG);\b(MDG|[Mm]aster\s[Dd]ata\s[Gg]overnance)\b;Master Data Governance (MDG)
-Supply Chain;Master Data Management (MDM);\b(MDM|[Mm]aster\s[Dd]ata\s[Mm]anagement)\b;MDM
-Supply Chain;MII - Manufacturing Intelligence;\b(MII|[Mm]anufacturing\s[Ii]ntelligence)\b;MII - Manufacturing Intelligence
-Supply Chain;DMS;\bDMS\b;DMS
-Supply Chain;EAM;\bEAM\b;EAM
-Supply Chain;EH&S - Health and Safety;\b(EH[\/\-\&]S|HS[\/\-\&]E)\b;EH&S - Health and Safety
-Supply Chain;GTS - Global Trade Services;\b(GTS|[Gg]lobal\s[Tt]rade\s[Ss]ervices?)\b;GTS - Global Trade Services
-Supply Chain;PLM;\bPLM\b;PLM
 Supply Chain;SRM;\bSRM\b;SRM
+Supply Chain;TM - Transportation Management;\b([Tt]ransportation\s[Mm]anagement|TM)\b;TM - Transportation Management
 Supply Chain;VC - Variant Configuration;\bVC\b;VC - Variant Configuration
-SAP;OER - Object Event Repository;\b(OER|[Oo]bject\s[Ee]vent\s[Rr]epository)\b;OER - Object Event Repository
-SAP;Archiving - ILM (Information Lifecycle Management);\b(ILM|[Aa]rchiving|[Ii]nformation\s[Ll]ifecycle\s[Mm]anagement)\b;ILM (Information Lifecycle Management)
-SAP;Authorizations;\b([Aa]uthori(z|s)ations?)\b;Authorizations
-SAP;Business One;\b([Bb]usiness\s[Oo]ne)\b;Business One
-SAP;EDI;\bEDI\b;EDI
-SAP;GRC;\bGRC\b;GRC
-SAP;HANA;\b(((4|S4)([\/\-\&\s])?)?HANA)\b;HANA
-SAP;LSMW;\bLSMW\b;LSMW
-SAP;Java;\b[Jj]ava\b;Java
-Netweaver;ABAP;\bABAP\b;ABAP
-Netweaver;BRF+ / DSM;(\bBRF\+|DSM|BRF\s?[Pp]lus\b);BRF+ / DSM
-Netweaver;CPI - Cloud Platform Integration;\b(CPI|[Cc]loud\s[Pp]latform\s[Ii]ntegration)\b;CPI - Cloud Platform Integration
-Netweaver;Enterprise Portal;\b([Ee]nterprise\s)?[Pp]ortal\b;Enterprise Portal
-Netweaver;Mobile;\bSAP[\/\-\&][Mm]obile\b;Mobile
-Netweaver;PI/XI;\b(PI[\/\-\&]XI|XI[\/\-\&]PI)\b;PI/XI
-Netweaver;PO - Process Orchestration;\b(PO|[Pp]rocess\s[Oo]rchestration)\b;PO - Process Orchestration
-Netweaver;PO BPM - Business Process Management;\b(BPM|PO[\/\-\&]BPM|[Bb]usiness\s[Pp]rocess\s[Mm]anagement)\b;PO BPM - Business Process Management
-Netweaver;Data Migration;\b([Dd]ata\s[Mm]igration)\b;Data Migration
-Netweaver;Gateway;\b[Gg]ateway\b;Gateway
-Netweaver;Basis;\b(Basis|BASIS)\b;Basis
-Netweaver;UI5;\bUI[\/\-\&]5\b;UI5
-Netweaver;WebDynpro;\bWebDynpro\b;WebDynpro
-Netweaver;Workflow;\bWorkflow\b;Workflow
-Netweaver;HCI - HANA Cloud Integration;\b(HCI|HANA\s[Cc]loud\s[Ii]ntegrat(ion|or))\b;HCI - HANA Cloud Integration
-Netweaver;Fiori;\b[Ff]iori\b;Fiori
+Supply Chain;WM;\b([Ww]arehouse\s[Mm]anagement|WM)\b;WM
