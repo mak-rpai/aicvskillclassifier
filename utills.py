@@ -140,10 +140,10 @@ def divide_categories(dataDict, df, categories, truncatedValue=1):
             for catg in categories:
                 try:
                     item = {
-                        k: v for k, v in data.items() if (k in df[df.category == catg].original_skill.values and v > truncatedValue)
+                        k: v for k, v in data.items() if (k in df[df.category == catg].original_skill.values)
                     }
                     if any(item):
-                        catgoriesArray.append({catg: item})
+                        catgoriesArray.append({catg: { k: v for k, v in item.items() if v>truncatedValue}})
                         countEachCategory.append(sum(item.values()))
                     else:
                         pass
