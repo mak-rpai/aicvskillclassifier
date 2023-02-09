@@ -89,6 +89,7 @@ elif st.session_state["authentication_status"]:
                 finalBestOutput = utills.select_model_and_produce_results(modelInputs,df_search,trueTargets)
                 if finalBestOutput[list(finalBestOutput.keys())[0]]["predSkills"][0] != 'No skill found!!':
                     plotSkills = OrderedDict(sorted(skillDict[list(skillDict.keys())[0]].items(), key=lambda x: x[1],reverse=True))
+                    plotPieSkills = { k: v for k, v in plotSkills.items() if ( v > 1)} 
                     with st.container():
                         textCol, graphCol = st.columns(2)
                         with textCol:
@@ -109,6 +110,7 @@ elif st.session_state["authentication_status"]:
                             st.subheader('Visualized Results (First model output):')
                             #st.write("Skills list : ",skillDict)
                             st.bokeh_chart(utills.generate_figure(plotSkills, 'All skills found on Record Id:  '+list(skillDict.keys())[0]), use_container_width=True)
+                            st.bokeh_chart(utills.generate_figure_v2(plotPieSkills, 'Pie Chart of skills for Record Id:  '+list(skillDict.keys())[0]), use_container_width=True)
                 else:
                     st.subheader('Analyzed Results:')
                     st.write("Record Id: ", list(finalBestOutput.keys())[0])

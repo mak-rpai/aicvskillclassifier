@@ -12,12 +12,12 @@ from collections import Counter
 import pickle
 import bokeh.palettes as palette
 from bokeh.transform import factor_cmap
-from bokeh.models import ColumnDataSource
+from bokeh.models import ColumnDataSource, LabelSet
 from bokeh.plotting import figure
+from bokeh.transform import cumsum
 from math import pi
 import streamlit as st
 #import operator
-
 
 
 def replace_matched_pattern_regex(pattern_keywords, content):
@@ -128,6 +128,28 @@ def generate_figure(entities, titleText):
   p.vbar(x = 'skills', top = 'skill_count', width = 0.8,source = source,  line_color='white', fill_color=factor_cmap('skills', palette=color, factors=list(entities.keys())))
   p.xgrid.grid_line_color = None
   p.y_range.start = 0.001
+  return p
+def generate_figure_v2(entities, titleText):
+  color=palette.viridis(len(entities))
+  #color=palette.Plasma[len(entities)]
+  #color=palette.Category20c[len(entities)]
+  p = figure(tools="hover", tooltips="@skills: @skill_count",toolbar_location=None)
+  skills_list = list(entities.keys())
+  skill_counts = list(entities.values())
+  source = ColumnDataSource(data=dict(skills = skills_list, skill_count = skill_counts,angle = skill_counts/np.sum(skill_counts)*2*pi, color = color))
+  '''
+  labels = LabelSet(x=0, y=1, text='skills',angle=cumsum('angle', include_zero=True), source=source, render_mode='canvas')
+  p.add_layout(labels)
+  '''
+  p.title.text = titleText
+  #p.plot_height=400
+  p.wedge(x=0, y=1, radius=0.8,start_angle=cumsum('angle', include_zero=True), end_angle=cumsum('angle'),  line_color='white', fill_color='color',legend_field='skills', source = source)
+  p.xgrid.grid_line_color = None
+  p.axis.axis_label=None
+  p.axis.visible=False
+  p.legend.location = "center"
+  p.outline_line_color = None
+  p.add_layout(p.legend[0], 'right')
   return p
 
 #def divide_categories(dataDict, df, categories, categoryThreshold = 0.7, truncatedValue=1):
