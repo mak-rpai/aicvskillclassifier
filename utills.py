@@ -117,19 +117,29 @@ def generate_bar_chart_plotly(entities, titleText):
         'Values': list(entities.values())
     })
   fig = px.bar(plot_df, y = 'Values', x = 'Skill', title =titleText,color="Values",color_discrete_sequence= px.colors.sequential.Plasma_r)
+  fig.update_layout(
+    title_font_family="Verdana",
+    font_color="green",
+    title_font_color="darkred",
+)
+  fig.update_xaxes(tickangle= 100)
   return fig
 
 def generate_pie_chart_plotly(entities, titleText):
-  plot_df = pd.DataFrame({
-        'Skill': list(entities.keys()), 
-        'Values': list(entities.values())
-    })
+  plot_df = pd.DataFrame(entities[list(entities.keys())[0]].items(), columns=['Skill','Values'])
   fig = px.pie(plot_df, values = 'Values', names = 'Skill', title =titleText, color_discrete_sequence= px.colors.sequential.Plasma_r)
   fig.update_traces(
                    title_font = dict(size=25,family='Verdana', 
                                      color='darkred'),
                    hoverinfo='label+percent',
                    textinfo='percent', textfont_size=20)
+  fig.update_layout(
+    title_font_family="Verdana",
+    title_font_color="darkred",
+    font_color="green"
+)
+                   # changing orientation of the legend
+  fig.update_layout(legend=dict(orientation="h",))
   return fig
 
 #def divide_categories(dataDict, df, categories, categoryThreshold = 0.7, truncatedValue=1):
