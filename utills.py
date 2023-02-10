@@ -13,6 +13,7 @@ import pickle
 from math import pi
 import streamlit as st
 import plotly.express as px
+TRUNCATED_VALUE = 1
 #import operator
 
 
@@ -59,7 +60,7 @@ def createDataForSecondModelPrediction(data, skillList):
     finalDataDict = []
     try:
         item = {
-            k: v for k, v in data.items() if (k in skillList)
+            k: v for k, v in data.items() if (v > TRUNCATED_VALUE)
         }
         if any(item):
             finalDataDict.append(item)
@@ -67,8 +68,8 @@ def createDataForSecondModelPrediction(data, skillList):
             pass
     except:
         pass
-    return pd.DataFrame(finalDataDict, columns=skillList).fillna(0).values
-    #return pd.DataFrame(finalDataDict, columns=skillList).fillna(0)
+    #return pd.DataFrame(finalDataDict, columns=skillList).fillna(0).values
+    return pd.DataFrame(finalDataDict, columns=skillList).fillna(0)
     
 def get_hcm_model_output(data, originalHCMSkillList):
     with open('./models/HCMModelBest.pkl' , 'rb') as f:
@@ -143,7 +144,7 @@ def generate_pie_chart_plotly(entities, titleText):
   return fig
 
 #def divide_categories(dataDict, df, categories, categoryThreshold = 0.7, truncatedValue=1):
-def divide_categories(dataDict, df, categories, truncatedValue=1):
+def divide_categories(dataDict, df, categories):
     finalDataDict = {}
     for keyId,data in dataDict.items():
         if data:
@@ -154,8 +155,9 @@ def divide_categories(dataDict, df, categories, truncatedValue=1):
                     item = {
                         k: v for k, v in data.items() if (k in df[df.category == catg].original_skill.values)
                     }
-                    if any(item):
-                        catgoriesArray.append({catg: { k: v for k, v in item.items() if v>truncatedValue}})
+                    if any({ k: v for k, v in item.items() if v>TRUNCATED_VALUE}):
+                        #catgoriesArray.append({catg: { k: v for k, v in item.items() if v>truncatedValue}})
+                        catgoriesArray.append({catg: item})
                         countEachCategory.append(sum(item.values()))
                     else:
                         pass
@@ -169,36 +171,40 @@ def divide_categories(dataDict, df, categories, truncatedValue=1):
             finalDataDict[keyId] = {}
     return finalDataDict
 
-def select_model_and_produce_results(modelInputs, df,trueTargets):
+def select_model_and_produce_results(modelInputs, df,trueTargets, truncatedValue=1):
     finalBestOutputs = {}
+    inputForSeletedModel = {}
     for keyId,data in modelInputs.items():
         trueTarget = trueTargets.get(keyId)
-        
         if data:                
             if list(data.keys())[0] == 'BI Tools':
                 inputForBiModel = createDataForSecondModelPrediction(data['BI Tools'], df[df.category == "BI Tools"].original_skill.values)
-                finalBestOutput = get_bi_model_output(inputForBiModel,df[df.category == "BI Tools"].original_skill.values)
+                finalBestOutput = get_bi_model_output(inputForBiModel.values,df[df.category == "BI Tools"].original_skill.values)
+                inputForSeletedModel = inputForBiModel.to_dict('records')
                 if trueTarget:
                     truncatedTarget = [target for target in trueTarget if target in df[df.category == "BI Tools"].original_skill.values]
                 else:
                     truncatedTarget =['unknown']
             elif list(data.keys())[0] == 'Financial':
                 inputForFiModel = createDataForSecondModelPrediction(data['Financial'], df[df.category == "Financial"].original_skill.values)
-                finalBestOutput = get_fi_model_output(inputForFiModel,df[df.category == "Financial"].original_skill.values)
+                finalBestOutput = get_fi_model_output(inputForFiModel.values,df[df.category == "Financial"].original_skill.values)
+                inputForSeletedModel = inputForFiModel.to_dict('records')
                 if trueTarget:
                     truncatedTarget = [target for target in trueTarget if target in df[df.category == "Financial"].original_skill.values]
                 else:
                     truncatedTarget =['unknown']
             elif list(data.keys())[0] == 'HCM':
-                inputForFiModel = createDataForSecondModelPrediction(data['HCM'], df[df.category == "HCM"].original_skill.values)
-                finalBestOutput = get_hcm_model_output(inputForFiModel,df[df.category == "HCM"].original_skill.values)
+                inputForHCMModel = createDataForSecondModelPrediction(data['HCM'], df[df.category == "HCM"].original_skill.values)
+                finalBestOutput = get_hcm_model_output(inputForHCMModel.values,df[df.category == "HCM"].original_skill.values)
+                inputForSeletedModel = inputForHCMModel.to_dict('records')
                 if trueTarget:
                     truncatedTarget = [target for target in trueTarget if target in df[df.category == "HCM"].original_skill.values]
                 else:
                     truncatedTarget =['unknown']
             elif list(data.keys())[0] == 'Hybris':
-                inputForFiModel = createDataForSecondModelPrediction(data['Hybris'], df[df.category == "Hybris"].original_skill.values)
-                finalBestOutput = get_hybris_model_output(inputForFiModel,df[df.category == "Hybris"].original_skill.values)
+                inputForHybrisModel = createDataForSecondModelPrediction(data['Hybris'], df[df.category == "Hybris"].original_skill.values)
+                finalBestOutput = get_hybris_model_output(inputForHybrisModel.values,df[df.category == "Hybris"].original_skill.values)
+                inputForSeletedModel = inputForHybrisModel.to_dict('records')
                 if trueTarget:
                     truncatedTarget = [target for target in trueTarget if target in df[df.category == "Hybris"].original_skill.values]
                 else:
@@ -209,7 +215,7 @@ def select_model_and_produce_results(modelInputs, df,trueTargets):
             finalBestOutputs[keyId] = {'predSkills':finalBestOutput,'trunTarget':truncatedTarget, 'trueTarget':trueTarget}
         else:
             finalBestOutputs[keyId] = {'predSkills':['No skill found!!'],'trunTarget':trueTarget, 'trueTarget':trueTarget}
-    return finalBestOutputs
+    return finalBestOutputs, inputForSeletedModel
 '''
 def clean_data_for_second_model(dataPath, pattern_keywords):
     cleanData = []

@@ -86,7 +86,7 @@ elif st.session_state["authentication_status"]:
             skillDict = utills.make_dataset_regex(cvFile, replace_patterns, search_patterns, multiple=False)
             if skillDict[list(skillDict.keys())[0]]:
                 modelInputs = utills.divide_categories(skillDict, df_search, categories)
-                finalBestOutput = utills.select_model_and_produce_results(modelInputs,df_search,trueTargets)
+                finalBestOutput,selectedModelInput = utills.select_model_and_produce_results(modelInputs,df_search,trueTargets)
                 if finalBestOutput[list(finalBestOutput.keys())[0]]["predSkills"][0] != 'No skill found!!':
                     plotSkills = OrderedDict(sorted(skillDict[list(skillDict.keys())[0]].items(), key=lambda x: x[1],reverse=True))
                     plotPieSkills = { k: v for k, v in plotSkills.items() if ( v > 1)} 
@@ -98,10 +98,7 @@ elif st.session_state["authentication_status"]:
                             #st.write(modelInputs)
                             st.markdown(f'Max skills found in <span style="color:Blue">{list(modelInputs[list(modelInputs.keys())[0]].keys())[0]} </span> category', unsafe_allow_html=True)
                             st.write("Selected second Model:",list(modelInputs[list(modelInputs.keys())[0]].keys())[0])
-                            selectedSkillList = df_search[df_search.category == list(modelInputs[list(modelInputs.keys())[0]].keys())[0]].original_skill.values
-                            selectedSkillDict = lst_dict(selectedSkillList)
-                            selectedSkillDict.update(modelInputs[list(modelInputs.keys())[0]][list(modelInputs[list(modelInputs.keys())[0]].keys())[0]])
-                            st.write("Input to selected second model:", selectedSkillDict)
+                            st.write("Input to selected second model:", selectedModelInput)
                             #st.write("Skills found :", finalBestOutput)
                             st.write("Predicted skills by second model: ",", ".join(finalBestOutput[list(skillDict.keys())[0]]['predSkills']))
                             st.write("True skills: ",", ".join(finalBestOutput[list(skillDict.keys())[0]]['trunTarget']))
@@ -131,7 +128,7 @@ elif st.session_state["authentication_status"]:
         if cvFiles and button:
             skillDict = utills.make_dataset_regex(cvFiles, replace_patterns, search_patterns, multiple=True)
             modelInputs = utills.divide_categories(skillDict, df_search, categories)
-            finalBestOutput = utills.select_model_and_produce_results(modelInputs,df_search,trueTargets)
+            finalBestOutput,_ = utills.select_model_and_produce_results(modelInputs,df_search,trueTargets)
             st.subheader('Analyzed Results:')
             if display_option == "Show all":
                 for recordId, result in finalBestOutput.items():
