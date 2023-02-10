@@ -109,8 +109,8 @@ elif st.session_state["authentication_status"]:
                         with graphCol:
                             st.subheader('Visualized Results (First model output):')
                             #st.write("Skills list : ",skillDict)
-                            st.bokeh_chart(utills.generate_figure(plotSkills, 'All skills found on Record Id:  '+list(skillDict.keys())[0]), use_container_width=True)
-                            st.bokeh_chart(utills.generate_figure_v2(plotPieSkills, 'Pie Chart of skills for Record Id:  '+list(skillDict.keys())[0]), use_container_width=True)
+                            st.plotly_chart(utills.generate_bar_chart_plotly(plotSkills, 'All skills found on Record Id:  '+list(skillDict.keys())[0]), use_container_width=True)
+                            st.plotly_chart(utills.generate_pie_chart_plotly(plotPieSkills, 'Pie Chart of skills for Record Id:  '+list(skillDict.keys())[0]), use_container_width=True)
                 else:
                     st.subheader('Analyzed Results:')
                     st.write("Record Id: ", list(finalBestOutput.keys())[0])
