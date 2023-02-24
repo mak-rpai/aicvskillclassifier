@@ -2,6 +2,6 @@ search_tags;regex_pattern;replaced_by
 BI?IP;\b(BI\s?[\/\-]*\s?IP)\b;BIIP
 BI?BW;\b(BI\s?[\/\-]\s?BW|BW|BI|[Bb]usiness\s[Ii]ntelligence|[Bb]usiness\s[Ww]arehouse)\b;BIBW
 CO-PC;\b(CO[\/\-\s]?PC)\b;COPC
-FI/CO;\b(FI[\/\-\s]?CO)\b;FI CO
+FI/CO;\b(FI\s?[\\\/\-\&]?\s?CO)\b;FI CO
 FI-CA;\b(FI[\/\-\s]?CA)\b;FICA
-CO/PS;\b(CO[\/\-\s]?PS)\b;COPS
+CO/PS;\b(CO\s?[\/\-\&]?PS)\b;COPS

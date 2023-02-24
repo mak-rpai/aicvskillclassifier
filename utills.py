@@ -30,7 +30,7 @@ def replace_matched_pattern_regex(pattern_keywords, content):
         except:
             pass
     # removing of all special characters except "_"
-    content = re.sub("[^A-Za-z0-9_]", " ", content)
+    #content = re.sub("[^A-Za-z0-9_]", " ", content)
     # removing extra white spaces
     content = re.sub("\s+", " ", content)
     return content

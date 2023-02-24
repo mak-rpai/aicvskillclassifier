@@ -2,23 +2,23 @@ category;search_tags;regex_pattern;original_skill
 BI Tools;Cloud Analytics;\b([Cc]loud\s[Aa]nalytics|[Aa]nalytics\s[Cc]loud)\b;Analytics Cloud
 BI Tools;BI?IP;\bBIIP\b;BI Integrated Planner
 BI Tools;BI?BW;\bBIBW\b;BI / BW
-BI Tools;BO - Data Services (BODS);\b(B0\s?[\/\-]*\s?DS)\b;BO - Data Services (BODS)
+BI Tools;BO - Data Services (BODS);\b(BO\s?[\/\-]*\s?DS)\b;BO - Data Services (BODS)
 BI Tools;BO - Design Studio;\b(Design\s?[\/\-]*\s?Studio)\b;BO - Design Studio
 BI Tools;BO / Business Objects;\b(BO|[Bb]usiness\s[Oo]bjects)\b;BO / Business Objects
 BI Tools;BPC (Outlooksoft);\bBPC\b;BPC (Outlooksoft)
 BI Tools;Lumira 2.X;\b[Ll]umira\b;Lumira 2.X
-Financial;CI - Convergent Invoicing;\bCI\b;CI - Convergent Invoicing
-Financial;CO;\bCO\b;CO
-Financial;Concur;\b([Cc]oncur)\b;Concur
-Financial;CO-PC;\b(COPC|[Pp]roduct\s[Cc]osting|[Pp]roduct\s[Cc]ost)\b;CO-PC
+Financial;CI - Convergent Invoicing;\b(CI|[Cc]onvergent\s[Ii]nvoicing|BRIM|[Bb]illing\s(and|\&)\s[Rr]evenue\s[Ii]nnovation\s[Mm]management)\b;CI - Convergent Invoicing
+Financial;CO;\b(CO|CO\s?[\\\&\/\-]?\s?PA|PCA|[Pp]rofit\s[Cc]enter\s[Aa]ccounting|CCA|[Cc]ontrolling|[Cc]ost\s[Cc]enter\s[Aa]ccounting|OPA|[Oo]rder\s[Pp]rocessing\s[Aa]dministration|[Pp]rofitability\s[Aa]nalysis)\b;CO
+Financial;Concur;\b([Cc]oncur|T\&E|[Tt]ravel\s(and|\&)?\s[Ee]xpen(c|s)es?|[Tt]ravel\s(and|\&)?\s[Ee]ntertainment)\b;Concur
+Financial;CO-PC;\b(COPC|PCP|[Pp]roduct\s[Cc]osting|[Pp]roduct\s[Cc]ost|[Cc]ost\s[Oo]bject\s[Cc]ontrolling)\b;CO-PC
 Financial;CO/PS;\bCOPS\b;CO/PS
-Financial;FI;\b(FI|IFRS|[Ff]inance|([Gg]eneral|[Ss]pecial)\s[Ll]edgers?|[Aa]ccounts?\s([Pp]ayables?|[Rr]eceivables?))\b;FI
-Financial;FI-CA;\bFICA\b;IS-U FICA
+Financial;FI;\b(FI|GL|AA|VAT|AP|AR|IFRS|[Ff]inance|[Aa]sset\s[Aa]ccounting|[Nn]ew\sGL|([Gg]eneral|[Ss]pecial)\s[Ll]edgers?|[Aa]ccounts?\s([Pp]ayables?|[Rr]eceivables?))\b;FI
+Financial;FI-CA;\b(FICA|FICA[Xx])\b;IS-U FICA
 Financial;FM - Funds Management;\b(FM|[Ff]unds?\s[Mm]anagement)\b;FM Funds Management
-Financial;FSCM - Financial Supply Chain Management;\b(F[\/\-\&\s]?SCM|[Ff]inancial\s[Ss]upply\s[Cc]hain\s[Mm]anagement)\b;FSCM - Financial Supply Chain Management
+Financial;FSCM - Financial Supply Chain Management;\b(F[\/\-\&\s]?SCM|[Ff]inancial\s[Ss]upply\s[Cc]hain\s[Mm]anagement|[Cc]redit\s[Mm]anagement|[Bb]iller\s[Dd]irect|[Collections?\s[Dd]isbursements?|[Ss]upply\s[Cc]hain\s[Ff]inancing)\b;FSCM - Financial Supply Chain Management
 Financial;JVA (Joint Venture Accounting);\b(JVA|[Jj]oint\s[Vv]enture|[Cc]utback)\b;JVA (Joint Venture Accounting)
-Financial;Treasury (TR);\b(TRM?|[Tt]reasury)\b;Treasury (TR)
-Financial;VIM;\b(VIM|[Vv]endor\s[Ii]nvoice\s[Mm]anagement)\b;VIM
+Financial;Treasury (TR);\b(TRM?|IHC|[Tt]reasury|[Ff]inancial\s[Rr]isk\s[Mm]anagement|[Cc]ash\s[Mm]anagement|[Ii]nhouse\s[Cc]ash)\b;Treasury (TR)
+Financial;VIM;\b(VIM|ICC|[Oo]pen[Tt]ext|[Vv]endor\s[Ii]nvoice\s[Mm]anagement)\b;VIM
 HCM;HCM;\b([Hh]uman[\/\-\s]?[Cc]apital[\/\-\s]?[Mm]anagement|HCM|HR)(?![\/\-\s]([APpLlTt]))\b;HCM
 HCM;HCM ABAP;\b(HCM[\/\-\s]?([Pp]rogramming|ABAP)|ABAP[\/\-\s]?HR)\b;HCM ABAP
 HCM;HCM Payroll;\b(HCM[\/\-\s]?(Payroll|PY|Løn)|Nettol(on|øn))\b;HCM payroll
@@ -50,7 +50,6 @@ SAP;Authorizations;\b([Aa]uthori(z|s)ations?)\b;Authorizations
 SAP;Business One;\b([Bb]usiness\s[Oo]ne)\b;Business One
 SAP;EDI;\bEDI\b;EDI
 SAP;GRC;\bGRC\b;GRC
-SAP;HANA;\b(((4|S4)([\/\-\&\s])?)?HANA)\b;HANA
 SAP;Archiving - ILM (Information Lifecycle Management);\b(ILM|[Aa]rchiving|[Ii]nformation\s[Ll]ifecycle\s[Mm]anagement)\b;ILM (Information Lifecycle Management)
 SAP;Java;\b[Jj]ava\b;Java
 SAP;LSMW;\bLSMW\b;LSMW
@@ -75,7 +74,7 @@ Supply Chain;PM - Plant Maintenance;\b([Pp]lant\s[Mm]anagement|PM)\b;PM - Plant 
 Supply Chain;PP;\b([Pp]roduction\s[Pp]lanning|PP)\b;PP
 Supply Chain;PPM - Project & Portfolio Management;\b(PPM|([Pp]roject\s(\&|and)\s[Pp]ortfolio\s[Mm]anagement))\b;PPM - Project & Portfolio Management
 Supply Chain;PP-PI;\b(PP[\/\-\s]?PI)\b;PP-PI
-Supply Chain;PS;\b([Pp]roject\s[Ss]ystem|PS)\b;PS
+Supply Chain;PS;\b([Pp]roject\s[Ss]ystems?|PS)\b;PS
 Supply Chain;QM;\b([Qq]uality\s[Mm]anagement|QM)\b;QM
 Supply Chain;SCM;\b([Ss]upply\s[Cc]hain\s[Mm]anagement|SCM)\b;SCM
 Supply Chain;SD;\b(SD|([Ss]ales\s(\&|and)\s[Dd]istributions?))\b;SD
