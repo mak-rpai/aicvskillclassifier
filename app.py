@@ -27,8 +27,8 @@ with open('style.css') as f:
         st.markdown(f'<style>{f.read()}<style>',unsafe_allow_html=True)
 
 # --- user authentication ---
-names = ["Md Alamgir Kabir", "Bo Telén Andersen"]
-usernames = ["mak","bta"]
+names = ["Md Alamgir Kabir", "Bo Telén Andersen", "ITOptimiser"]
+usernames = ["mak","bta", "ITO"]
 
 # load hashed passwords
 file_path = Path(__file__).parent / "hashed_pw.pkl"
