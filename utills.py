@@ -112,23 +112,24 @@ def get_fi_model_output(data, originalFiSkillList):
             pass
         predictedSkillList = list(originalFiSkillList[predict[0].astype(int).astype(np.bool)])
     return predictedSkillList
-def generate_bar_chart_plotly(entities, titleText):
+def generate_bar_chart_plotly(entities, titleText, color_map):
   plot_df = pd.DataFrame({
         'Skill': list(entities.keys()), 
         'Values': list(entities.values())
     })
-  fig = px.bar(plot_df, y = 'Values', x = 'Skill', title =titleText,color="Values",color_discrete_sequence= px.colors.sequential.Plasma_r)
+  fig = px.bar(plot_df, y = 'Values', x = 'Skill', title =titleText,color="Skill",color_discrete_map=color_map)
   fig.update_layout(
     title_font_family="Verdana",
     font_color="green",
     title_font_color="darkred",
+    showlegend=False
 )
   fig.update_xaxes(tickangle= 100)
   return fig
 
-def generate_pie_chart_plotly(entities, titleText):
+def generate_pie_chart_plotly(entities, titleText, color_map):
   plot_df = pd.DataFrame(entities[list(entities.keys())[0]].items(), columns=['Skill','Values'])
-  fig = px.pie(plot_df, values = 'Values', names = 'Skill', title =titleText, color_discrete_sequence= px.colors.sequential.Plasma_r)
+  fig = px.pie(plot_df, values = 'Values', names = 'Skill', title =titleText,color="Skill", color_discrete_map=color_map)
   fig.update_traces(
                    title_font = dict(size=25,family='Verdana', 
                                      color='darkred'),

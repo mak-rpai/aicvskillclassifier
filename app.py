@@ -11,6 +11,8 @@ import warnings
 from PIL import Image
 import docx2txt
 from io import StringIO 
+import plotly.express as px
+
 
 warnings.filterwarnings("ignore")
 
@@ -106,8 +108,10 @@ elif st.session_state["authentication_status"]:
                         with graphCol:
                             st.subheader('Visualized Results (First model output):')
                             #st.write("Skills list : ",skillDict)
-                            st.plotly_chart(utills.generate_bar_chart_plotly(plotSkills, 'All skills found on Record Id:  '+list(skillDict.keys())[0]), use_container_width=True)
-                            st.plotly_chart(utills.generate_pie_chart_plotly(modelInputs[list(modelInputs.keys())[0]], 'Pie Chart of primary skills for Record Id:  '+list(skillDict.keys())[0]), use_container_width=True)
+                            # map primary skills to a color
+                            color_map = dict(zip(modelInputs[list(modelInputs.keys())[0]][list(modelInputs[list(modelInputs.keys())[0]].keys())[0]].keys(), px.colors.qualitative.G10))
+                            st.plotly_chart(utills.generate_bar_chart_plotly(plotSkills, 'All skills found on Record Id:  '+list(skillDict.keys())[0], color_map), use_container_width=True)
+                            st.plotly_chart(utills.generate_pie_chart_plotly(modelInputs[list(modelInputs.keys())[0]], 'Pie Chart of primary skills for Record Id:  '+list(skillDict.keys())[0], color_map), use_container_width=True)
                 else:
                     st.subheader('Analyzed Results:')
                     st.write("Record Id: ", list(finalBestOutput.keys())[0])
