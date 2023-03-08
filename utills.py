@@ -224,7 +224,7 @@ def select_model_and_produce_results(modelInputs, df,trueTargets, truncatedValue
                 truncatedTarget =['Not implemented!']
             finalBestOutputs[keyId] = {'predSkills':finalBestOutput,'trunTarget':truncatedTarget, 'trueTarget':trueTarget}
         else:
-            finalBestOutputs[keyId] = {'predSkills':['No skill found!!'],'trunTarget':trueTarget, 'trueTarget':trueTarget}
+            finalBestOutputs[keyId] = {'predSkills':['No skill found!!'],'trunTarget':trueTarget if trueTarget is not None else ['unknown'], 'trueTarget':trueTarget if trueTarget is not None else ['unknown']}
     return finalBestOutputs, inputForSeletedModel
 '''
 def clean_data_for_second_model(dataPath, pattern_keywords):
