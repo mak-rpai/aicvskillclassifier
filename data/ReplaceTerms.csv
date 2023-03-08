@@ -1,0 +1,88 @@
+﻿skill_id;original_skill;category;skill_name;replaced_by
+1;BI Integrated Planner;BI Tools;BI-IP;BIIP
+1;BI Integrated Planner;BI Tools;BI- IP;BIIP
+1;BI Integrated Planner;BI Tools;BI -IP;BIIP
+1;BI Integrated Planner;BI Tools;BI - IP;BIIP
+1;BI Integrated Planner;BI Tools;BI/IP;BIIP
+1;BI Integrated Planner;BI Tools;BI/ IP;BIIP
+1;BI Integrated Planner;BI Tools;BI /IP;BIIP
+1;BI Integrated Planner;BI Tools;BI / IP;BIIP
+1;BI Integrated Planner;BI Tools;BI&IP;BIIP
+1;BI Integrated Planner;BI Tools;BI& IP;BIIP
+1;BI Integrated Planner;BI Tools;BI &IP;BIIP
+1;BI Integrated Planner;BI Tools;BI & IP;BIIP
+1;BI Integrated Planner;BI Tools;BI\\IP;BIIP
+1;BI Integrated Planner;BI Tools;BI\\ IP;BIIP
+1;BI Integrated Planner;BI Tools;BI \\IP;BIIP
+1;BI Integrated Planner;BI Tools;BI \\ IP;BIIP
+2;COPC;Financial;CO-PC;COPC
+2;COPC;Financial;CO- PC;COPC
+2;COPC;Financial;CO -PC;COPC
+2;COPC;Financial;CO - PC;COPC
+2;COPC;Financial;CO/PC;COPC
+2;COPC;Financial;CO/ PC;COPC
+2;COPC;Financial;CO /PC;COPC
+2;COPC;Financial;CO / PC;COPC
+2;COPC;Financial;CO&PC;COPC
+2;COPC;Financial;CO& PC;COPC
+2;COPC;Financial;CO &PC;COPC
+2;COPC;Financial;CO & PC;COPC
+2;COPC;Financial;CO\\PC;COPC
+2;COPC;Financial;CO\\ PC;COPC
+2;COPC;Financial;CO \\PC;COPC
+2;COPC;Financial;CO \\ PC;COPC
+2;COPC;Financial;CO,PC;COPC
+2;COPC;Financial;CO ,PC;COPC
+2;COPC;Financial;CO, PC;COPC
+2;COPC;Financial;CO , PC;COPC
+3;CO/PS;Financial;CO-PS;CO COPS
+3;CO/PS;Financial;CO- PS;CO COPS
+3;CO/PS;Financial;CO -PS;CO COPS
+3;CO/PS;Financial;CO - PS;CO COPS
+3;CO/PS;Financial;CO/PS;CO COPS
+3;CO/PS;Financial;CO/ PS;CO COPS
+3;CO/PS;Financial;CO /PS;CO COPS
+3;CO/PS;Financial;CO / PS;CO COPS
+3;CO/PS;Financial;CO\\PS;CO COPS
+3;CO/PS;Financial;CO\\ PS;CO COPS
+3;CO/PS;Financial;CO \\PS;CO COPS
+3;CO/PS;Financial;CO \\ PS;CO COPS
+3;CO/PS;Financial;CO&PS;CO COPS
+3;CO/PS;Financial;CO& PS;CO COPS
+3;CO/PS;Financial;CO &PS;CO COPS
+3;CO/PS;Financial;CO & PS;CO COPS
+4;FI/CO;Financial;FICO;FI CO
+5;FI/CA;Financial;FI-CA[Xx]?;FICA
+5;FI/CA;Financial;FI- CA[Xx]?;FICA
+5;FI/CA;Financial;FI -CA[Xx]?;FICA
+5;FI/CA;Financial;FI - CA[Xx]?;FICA
+5;FI/CA;Financial;FI/CA[Xx]?;FICA
+5;FI/CA;Financial;FI/ CA[Xx]?;FICA
+5;FI/CA;Financial;FI /CA[Xx]?;FICA
+5;FI/CA;Financial;FI / CA[Xx]?;FICA
+5;FI/CA;Financial;FI&CA[Xx]?;FICA
+5;FI/CA;Financial;FI& CA[Xx]?;FICA
+5;FI/CA;Financial;FI &CA[Xx]?;FICA
+5;FI/CA;Financial;FI & CA[Xx]?;FICA
+5;FI/CA;Financial;FI\\CA[Xx]?;FICA
+5;FI/CA;Financial;FI\\ CA[Xx]?;FICA
+5;FI/CA;Financial;FI \\CA[Xx]?;FICA
+5;FI/CA;Financial;FI \\ CA[Xx]?;FICA
+6;Analytics Cloud;BI Tools;[Dd]ata [Ww]arehouse [Cc]loud;DWC
+7;BO - Data Services (BODS);BI Tools;BO-DS;BODS
+7;BO - Data Services (BODS);BI Tools;BO -DS;BODS
+7;BO - Data Services (BODS);BI Tools;BO- DS;BODS
+7;BO - Data Services (BODS);BI Tools;BO - DS;BODS
+7;BO - Data Services (BODS);BI Tools;BO / DS;BODS
+7;BO - Data Services (BODS);BI Tools;BO /DS;BODS
+7;BO - Data Services (BODS);BI Tools;BO/ DS;BODS
+7;BO - Data Services (BODS);BI Tools;BO / DS;BODS
+7;BO - Data Services (BODS);BI Tools;BO\\DS;BODS
+7;BO - Data Services (BODS);BI Tools;BO \\DS;BODS
+7;BO - Data Services (BODS);BI Tools;BO\\ DS;BODS
+7;BO - Data Services (BODS);BI Tools;BO \\ DS;BODS
+7;BO - Data Services (BODS);BI Tools;BO&DS;BODS
+7;BO - Data Services (BODS);BI Tools;BO& DS;BODS
+7;BO - Data Services (BODS);BI Tools;BO &DS;BODS
+7;BO - Data Services (BODS);BI Tools;BO & DS;BODS
+7;BO - Data Services (BODS);BI Tools;BO [Dd]ata [Ss]ervices?;BODS

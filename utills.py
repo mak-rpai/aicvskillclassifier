@@ -15,7 +15,14 @@ import streamlit as st
 import plotly.express as px
 TRUNCATED_VALUE = 1
 #import operator
-
+@st.cache_data
+def return_dataframes():
+    fn = lambda x: r"\b("+x+r")\b"
+    df_replace = pd.read_csv("./data/ReplaceTerms.csv",sep=";",encoding="utf-8",)
+    df_replace = df_replace.groupby(['skill_id','original_skill','category','replaced_by'])['skill_name'].apply('|'.join).apply(fn).reset_index()
+    df_search = pd.read_csv("./data/SearchTerms.csv",sep=";",encoding="utf-8",)
+    df_search = df_search.groupby(['skill_id','original_skill','category'])['skill_name'].apply('|'.join).apply(fn).reset_index()
+    return df_replace, df_search
 
 def replace_matched_pattern_regex(pattern_keywords, content):
     """
@@ -147,6 +154,7 @@ def generate_pie_chart_plotly(entities, titleText, color_map):
 #def divide_categories(dataDict, df, categories, categoryThreshold = 0.7, truncatedValue=1):
 def divide_categories(dataDict, df, categories):
     finalDataDict = {}
+    individualCatDict = {}
     for keyId,data in dataDict.items():
         if data:
             catgoriesArray = []
@@ -160,6 +168,7 @@ def divide_categories(dataDict, df, categories):
                         #catgoriesArray.append({catg: { k: v for k, v in item.items() if v>truncatedValue}})
                         catgoriesArray.append({catg: item})
                         countEachCategory.append(sum(item.values()))
+                        individualCatDict[catg]= sum(item.values())
                     else:
                         pass
                 except:
@@ -170,7 +179,7 @@ def divide_categories(dataDict, df, categories):
                 finalDataDict[keyId] = {}
         else:
             finalDataDict[keyId] = {}
-    return finalDataDict
+    return finalDataDict, individualCatDict
 
 def select_model_and_produce_results(modelInputs, df,trueTargets, truncatedValue=1):
     finalBestOutputs = {}

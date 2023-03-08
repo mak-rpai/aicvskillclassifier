@@ -1,0 +1,529 @@
+﻿skill_id;original_skill;category;skill_name
+1;BI Integrated Planner;BI Tools;BIIP
+1;BI Integrated Planner;BI Tools;BIBP
+1;BI Integrated Planner;BI Tools;[Ii]ntegrated [Pp]lanner
+1;BI Integrated Planner;BI Tools;[Ii]ntegrated [Pp]laninng
+1;BI Integrated Planner;BI Tools;[Ii]ntegrated [Bb]usiness [Pp]laninng
+2;BI / BW;BI Tools;BIBW
+2;BI / BW;BI Tools;BW\d?
+2;BI / BW;BI Tools;BI
+2;BI / BW;BI Tools;BW
+2;BI / BW;BI Tools;[Bb]usiness [Ii]ntelligence
+2;BI / BW;BI Tools;[Bb]usiness [Ww]arehouse
+2;BI / BW;BI Tools;[Dd]ata [Ww]arehouse
+2;BI / BW;BI Tools;[Dd]ata [Ww]arehousing
+3;Analytics Cloud;BI Tools;[Cc]loud [Aa]nalytics?
+3;Analytics Cloud;BI Tools;[Aa]nalytics? [Cc]loud
+3;Analytics Cloud;BI Tools;SAC
+3;Analytics Cloud;BI Tools;DWC
+4;BO - Data Services (BODS);BI Tools;BODS
+5;BO - Design Studio;BI Tools;[Dd]esign [Ss]tudio
+5;BO - Design Studio;BI Tools;[Dd]esign-[Ss]tudio
+5;BO - Design Studio;BI Tools;[Dd]esign- [Ss]tudio
+5;BO - Design Studio;BI Tools;[Dd]esign -[Ss]tudio
+5;BO - Design Studio;BI Tools;[Dd]esign - [Ss]tudio
+5;BO - Design Studio;BI Tools;[Dd]esign/[Ss]tudio
+5;BO - Design Studio;BI Tools;[Dd]esign/ [Ss]tudio
+5;BO - Design Studio;BI Tools;[Dd]esign /[Ss]tudio
+5;BO - Design Studio;BI Tools;[Dd]esign / [Ss]tudio
+5;BO - Design Studio;BI Tools;[Dd]esign\[Ss]tudio
+5;BO - Design Studio;BI Tools;[Dd]esign\ [Ss]tudio
+5;BO - Design Studio;BI Tools;[Dd]esign \[Ss]tudio
+5;BO - Design Studio;BI Tools;[Dd]esign \ [Ss]tudio
+6;BO / Business Objects;BI Tools;BO
+6;BO / Business Objects;BI Tools;[Bb]usiness [Oo]bjects?
+6;BO / Business Objects;BI Tools;[Bb]usiness[Oo]bjects?
+8;BPC (Outlooksoft);BI Tools;BPC
+8;BPC (Outlooksoft);BI Tools;[Oo]utlooksoft
+9;Lumira 2.X;BI Tools;[Ll]umira
+10;CI - Convergent Invoicing;Financial;CI
+10;CI - Convergent Invoicing;Financial;[Cc]onvergent [Ii]nvoicing
+10;CI - Convergent Invoicing;Financial;BRIM
+10;CI - Convergent Invoicing;Financial;[Bb]illing and [Rr]evenue [Ii]nnovation [Mm]management
+10;CI - Convergent Invoicing;Financial;[Bb]illing & [Rr]evenue [Ii]nnovation [Mm]management
+11;CO;Financial;CO
+11;CO;Financial;COPA
+11;CO;Financial;PCA
+11;CO;Financial;[Pp]rofit [Cc]enter [Aa]ccounting
+11;CO;Financial;CCA
+11;CO;Financial;[Cc]ost [Cc]enter [Aa]ccounting
+11;CO;Financial;OPA
+11;CO;Financial;[Oo]rder [Pp]rocessing [Aa]dministration
+11;CO;Financial;[Pp]rofitability [Aa]nalysis
+11;CO;Financial;[Cc]ontrolling
+12;Concur;Financial;[Cc]oncur
+12;Concur;Financial;[Tt]ravel [Mm]anagement
+12;Concur;Financial;[Tt]ravel [Ee]xpenses?
+13;CO-PC;Financial;COPC
+13;CO-PC;Financial;PCP
+13;CO-PC;Financial;[Pp]roduct [Cc]osting
+13;CO-PC;Financial;[Pp]roduct [Cc]ost
+13;CO-PC;Financial;[Cc]ost [Oo]bject [Cc]ontrolling
+14;CO/PS;Financial;COPS
+15;FI;Financial;FI
+15;FI;Financial;GL
+15;FI;Financial;AA
+15;FI;Financial;VAT
+15;FI;Financial;AP
+15;FI;Financial;AR
+15;FI;Financial;IFRS
+15;FI;Financial;[Ff]inance
+15;FI;Financial;[Aa]sset [Aa]ccounting
+15;FI;Financial;[Nn]ew GL
+15;FI;Financial;[Gg]eneral [Ll]edgers?
+15;FI;Financial;[Ss]pecial [Ll]edgers?
+15;FI;Financial;[Aa]ccounts? [Pp]ayables?
+15;FI;Financial;[Aa]ccounts? [Rr]eceivables?
+16;IS-U FICA;Financial;FICA[Xx]?
+17;FM Funds Management;Financial;FM
+17;FM Funds Management;Financial;[Ff]unds? [Mm]anagement
+18;FSCM - Financial Supply Chain Management;Financial;FSCM
+18;FSCM - Financial Supply Chain Management;Financial;F SCM
+18;FSCM - Financial Supply Chain Management;Financial;F-SCM
+18;FSCM - Financial Supply Chain Management;Financial;F -SCM
+18;FSCM - Financial Supply Chain Management;Financial;F- SCM
+18;FSCM - Financial Supply Chain Management;Financial;F - SCM
+18;FSCM - Financial Supply Chain Management;Financial;F&SCM
+18;FSCM - Financial Supply Chain Management;Financial;F &SCM
+18;FSCM - Financial Supply Chain Management;Financial;F& SCM
+18;FSCM - Financial Supply Chain Management;Financial;F & SCM
+18;FSCM - Financial Supply Chain Management;Financial;F/SCM
+18;FSCM - Financial Supply Chain Management;Financial;F /SCM
+18;FSCM - Financial Supply Chain Management;Financial;F/ SCM
+18;FSCM - Financial Supply Chain Management;Financial;F / SCM
+18;FSCM - Financial Supply Chain Management;Financial;F\\SCM
+18;FSCM - Financial Supply Chain Management;Financial;F \\SCM
+18;FSCM - Financial Supply Chain Management;Financial;[Cc]redit [Mm]anagement
+18;FSCM - Financial Supply Chain Management;Financial;F\\ SCM
+18;FSCM - Financial Supply Chain Management;Financial;F \\ SCM
+18;FSCM - Financial Supply Chain Management;Financial;[Bb]iller [Dd]irect
+18;FSCM - Financial Supply Chain Management;Financial;[Collections? [Dd]isbursements?
+18;FSCM - Financial Supply Chain Management;Financial;[Ff]inancial [Ss]upply [Cc]hain [Mm]anagement
+18;FSCM - Financial Supply Chain Management;Financial;[Ss]upply [Cc]hain [Ff]inancing
+19;JVA (Joint Venture Accounting);Financial;JVA
+19;JVA (Joint Venture Accounting);Financial;[Jj]oint [Vv]enture
+19;JVA (Joint Venture Accounting);Financial;[Cc]utback
+20;Treasury (TR);Financial;TRM?
+20;Treasury (TR);Financial;IHC
+20;Treasury (TR);Financial;[Tt]reasury
+20;Treasury (TR);Financial;[Ff]inancial [Rr]isk [Mm]anagement
+20;Treasury (TR);Financial;[Cc]ash [Mm]anagement
+20;Treasury (TR);Financial;[Ii]nhouse [Cc]ash
+21;VIM;Financial;VIM
+21;VIM;Financial;ICC
+21;VIM;Financial;[Oo]pen[Tt]ext
+21;VIM;Financial;[Vv]endor [Ii]nvoice [Mm]anagement
+22;HCM;HCM;HCM
+22;HCM;HCM;[Hh]uman [Cc]apital [Mm]anagement
+22;HCM;HCM;HR
+22;HCM;HCM;[Hh]uman [Rr]esource [Mm]anagement
+23;HCM ABAP;HCM;HCM ([Pp]rogramming|ABAP)
+23;HCM ABAP;HCM;HCM-([Pp]rogramming|ABAP)
+23;HCM ABAP;HCM;HCM- ([Pp]rogramming|ABAP)
+23;HCM ABAP;HCM;HCM -([Pp]rogramming|ABAP)
+23;HCM ABAP;HCM;HCM - ([Pp]rogramming|ABAP)
+23;HCM ABAP;HCM;HCM&([Pp]rogramming|ABAP)
+23;HCM ABAP;HCM;HCM& ([Pp]rogramming|ABAP)
+23;HCM ABAP;HCM;HCM &([Pp]rogramming|ABAP)
+23;HCM ABAP;HCM;HCM & ([Pp]rogramming|ABAP)
+23;HCM ABAP;HCM;HCM/([Pp]rogramming|ABAP)
+23;HCM ABAP;HCM;HCM/ ([Pp]rogramming|ABAP)
+23;HCM ABAP;HCM;HCM /([Pp]rogramming|ABAP)
+23;HCM ABAP;HCM;HCM / ([Pp]rogramming|ABAP)
+23;HCM ABAP;HCM;HCM\\([Pp]rogramming|ABAP)
+23;HCM ABAP;HCM;HCM\\ ([Pp]rogramming|ABAP)
+23;HCM ABAP;HCM;HCM \\([Pp]rogramming|ABAP)
+23;HCM ABAP;HCM;HCM \\ ([Pp]rogramming|ABAP)
+23;HCM ABAP;HCM;ABAP HR
+23;HCM ABAP;HCM;ABAP-HR
+23;HCM ABAP;HCM;ABAP- HR
+23;HCM ABAP;HCM;ABAP -HR
+23;HCM ABAP;HCM;ABAP - HR
+23;HCM ABAP;HCM;ABAP&HR
+23;HCM ABAP;HCM;ABAP& HR
+23;HCM ABAP;HCM;ABAP &HR
+23;HCM ABAP;HCM;ABAP & HR
+23;HCM ABAP;HCM;ABAP/HR
+23;HCM ABAP;HCM;ABAP/ HR
+23;HCM ABAP;HCM;ABAP /HR
+23;HCM ABAP;HCM;ABAP / HR
+23;HCM ABAP;HCM;ABAP\\HR
+23;HCM ABAP;HCM;ABAP\\ HR
+23;HCM ABAP;HCM;ABAP \\HR
+23;HCM ABAP;HCM;ABAP \\ HR
+24;HCM Payroll;HCM;HCM (Payroll|PY|Løn)
+24;HCM Payroll;HCM;HCM-(Payroll|PY|Løn)
+24;HCM Payroll;HCM;HCM- (Payroll|PY|Løn)
+24;HCM Payroll;HCM;HCM -(Payroll|PY|Løn)
+24;HCM Payroll;HCM;HCM - (Payroll|PY|Løn)
+24;HCM Payroll;HCM;HCM&(Payroll|PY|Løn)
+24;HCM Payroll;HCM;HCM& (Payroll|PY|Løn)
+24;HCM Payroll;HCM;HCM &(Payroll|PY|Løn)
+24;HCM Payroll;HCM;HCM & (Payroll|PY|Løn)
+24;HCM Payroll;HCM;HCM/(Payroll|PY|Løn)
+24;HCM Payroll;HCM;HCM/ (Payroll|PY|Løn)
+24;HCM Payroll;HCM;HCM /(Payroll|PY|Løn)
+24;HCM Payroll;HCM;HCM / (Payroll|PY|Løn)
+24;HCM Payroll;HCM;HCM\\(Payroll|PY|Løn)
+24;HCM Payroll;HCM;HCM\\ (Payroll|PY|Løn)
+24;HCM Payroll;HCM;HCM \\(Payroll|PY|Løn)
+24;HCM Payroll;HCM;HCM \\ (Payroll|PY|Løn)
+24;HCM Payroll;HCM;[Nn]ettol(on|øn)
+25;HCM Talent Management;HCM;[Tt]alent [Mm]anagement
+25;HCM Talent Management;HCM;PATM
+25;HCM Talent Management;HCM;PA TM
+25;HCM Talent Management;HCM;PA-TM
+25;HCM Talent Management;HCM;PA- TM
+25;HCM Talent Management;HCM;PA -TM
+25;HCM Talent Management;HCM;PA - TM
+25;HCM Talent Management;HCM;PA&TM
+25;HCM Talent Management;HCM;PA& TM
+25;HCM Talent Management;HCM;PA &TM
+25;HCM Talent Management;HCM;PA & TM
+25;HCM Talent Management;HCM;PA/TM
+25;HCM Talent Management;HCM;PA/ TM
+25;HCM Talent Management;HCM;PA /TM
+25;HCM Talent Management;HCM;PA / TM
+25;HCM Talent Management;HCM;PA\\TM
+25;HCM Talent Management;HCM;PA\\ TM
+25;HCM Talent Management;HCM;PA \\TM
+25;HCM Talent Management;HCM;PA \\ TM
+26;HCM Time & Attendance Management;HCM;[Tt]ime\s[Mm]anagement
+26;HCM Time & Attendance Management;HCM;(HR|HCM) TM
+26;HCM Time & Attendance Management;HCM;(HR|HCM)-TM
+26;HCM Time & Attendance Management;HCM;(HR|HCM)- TM
+26;HCM Time & Attendance Management;HCM;(HR|HCM) -TM
+26;HCM Time & Attendance Management;HCM;(HR|HCM) - TM
+26;HCM Time & Attendance Management;HCM;(HR|HCM)&TM
+26;HCM Time & Attendance Management;HCM;(HR|HCM)& TM
+26;HCM Time & Attendance Management;HCM;(HR|HCM) &TM
+26;HCM Time & Attendance Management;HCM;(HR|HCM) & TM
+26;HCM Time & Attendance Management;HCM;(HR|HCM)/TM
+26;HCM Time & Attendance Management;HCM;(HR|HCM)/ TM
+26;HCM Time & Attendance Management;HCM;(HR|HCM) /TM
+26;HCM Time & Attendance Management;HCM;(HR|HCM) / TM
+26;HCM Time & Attendance Management;HCM;(HR|HCM)\\TM
+26;HCM Time & Attendance Management;HCM;(HR|HCM)\\ TM
+26;HCM Time & Attendance Management;HCM;(HR|HCM) \\TM
+26;HCM Time & Attendance Management;HCM;(HR|HCM) \\ TM
+27;SuccessFactors;HCM;SuccessFactors?
+27;SuccessFactors;HCM;Success Factors?
+27;SuccessFactors;HCM;Success-Factors?
+27;SuccessFactors;HCM;Success -Factors?
+27;SuccessFactors;HCM;Success- Factors?
+27;SuccessFactors;HCM;Success - Factors?
+27;SuccessFactors;HCM;Success/Factors?
+27;SuccessFactors;HCM;Success /Factors?
+27;SuccessFactors;HCM;Success/ Factors?
+27;SuccessFactors;HCM;Success / Factors?
+27;SuccessFactors;HCM;Success\\Factors?
+27;SuccessFactors;HCM;Success \\Factors?
+27;SuccessFactors;HCM;Success\\ Factors?
+27;SuccessFactors;HCM;Success \\ Factors?
+28;Hybris / C/4 HANA;Hybris;C4C
+28;Hybris / C/4 HANA;Hybris;[Hh]ybris C4 (HANA|[Hh]ana)
+28;Hybris / C/4 HANA;Hybris;[Hh]ybris C 4 (HANA|[Hh]ana)
+28;Hybris / C/4 HANA;Hybris;[Hh]ybris - C-4 (HANA|[Hh]ana)
+28;Hybris / C/4 HANA;Hybris;[Hh]ybris / C/4 (HANA|[Hh]ana)
+28;Hybris / C/4 HANA;Hybris;[Hh]ybris \\ C\\4 (HANA|[Hh]ana)
+29;Hybris / C/4 HANA Developer;Hybris;([Hh]ybris|C4C) [Dd]eveloper
+29;Hybris / C/4 HANA Developer;Hybris;([Hh]ybris|C4C)-[Dd]eveloper
+29;Hybris / C/4 HANA Developer;Hybris;([Hh]ybris|C4C) -[Dd]eveloper
+29;Hybris / C/4 HANA Developer;Hybris;([Hh]ybris|C4C)- [Dd]eveloper
+29;Hybris / C/4 HANA Developer;Hybris;([Hh]ybris|C4C) - [Dd]eveloper
+29;Hybris / C/4 HANA Developer;Hybris;([Hh]ybris|C4C)/[Dd]eveloper
+29;Hybris / C/4 HANA Developer;Hybris;([Hh]ybris|C4C) /[Dd]eveloper
+29;Hybris / C/4 HANA Developer;Hybris;([Hh]ybris|C4C)/ [Dd]eveloper
+29;Hybris / C/4 HANA Developer;Hybris;([Hh]ybris|C4C) / [Dd]eveloper
+29;Hybris / C/4 HANA Developer;Hybris;([Hh]ybris|C4C)\\[Dd]eveloper
+29;Hybris / C/4 HANA Developer;Hybris;([Hh]ybris|C4C) \\[Dd]eveloper
+29;Hybris / C/4 HANA Developer;Hybris;([Hh]ybris|C4C)\\ [Dd]eveloper
+29;Hybris / C/4 HANA Developer;Hybris;([Hh]ybris|C4C) \\ [Dd]eveloper
+30;Hybris Commerce / Commerce Cloud;Hybris;[Hh]ybris [Cc]ommerce
+30;Hybris Commerce / Commerce Cloud;Hybris;[Hh]ybris-[Cc]ommerce
+30;Hybris Commerce / Commerce Cloud;Hybris;[Hh]ybris- [Cc]ommerce
+30;Hybris Commerce / Commerce Cloud;Hybris;[Hh]ybris -[Cc]ommerce
+30;Hybris Commerce / Commerce Cloud;Hybris;[Hh]ybris - [Cc]ommerce
+30;Hybris Commerce / Commerce Cloud;Hybris;[Hh]ybris/[Cc]ommerce
+30;Hybris Commerce / Commerce Cloud;Hybris;[Hh]ybris/ [Cc]ommerce
+30;Hybris Commerce / Commerce Cloud;Hybris;[Hh]ybris /[Cc]ommerce
+30;Hybris Commerce / Commerce Cloud;Hybris;[Hh]ybris / [Cc]ommerce
+30;Hybris Commerce / Commerce Cloud;Hybris;[Hh]ybris\\[Cc]ommerce
+30;Hybris Commerce / Commerce Cloud;Hybris;[Hh]ybris\\ [Cc]ommerce
+30;Hybris Commerce / Commerce Cloud;Hybris;[Hh]ybris \\[Cc]ommerce
+30;Hybris Commerce / Commerce Cloud;Hybris;[Hh]ybris \\ [Cc]ommerce
+31;Hybris Marketing / Marketing Cloud;Hybris;[Hh]ybris [Mm]arketing
+31;Hybris Marketing / Marketing Cloud;Hybris;[Hh]ybris-[Mm]arketing
+31;Hybris Marketing / Marketing Cloud;Hybris;[Hh]ybris- [Mm]arketing
+31;Hybris Marketing / Marketing Cloud;Hybris;[Hh]ybris -[Mm]arketing
+31;Hybris Marketing / Marketing Cloud;Hybris;[Hh]ybris - [Mm]arketing
+31;Hybris Marketing / Marketing Cloud;Hybris;[Hh]ybris/[Mm]arketing
+31;Hybris Marketing / Marketing Cloud;Hybris;[Hh]ybris/ [Mm]arketing
+31;Hybris Marketing / Marketing Cloud;Hybris;[Hh]ybris /[Mm]arketing
+31;Hybris Marketing / Marketing Cloud;Hybris;[Hh]ybris / [Mm]arketing
+31;Hybris Marketing / Marketing Cloud;Hybris;[Hh]ybris\\[Mm]arketing
+31;Hybris Marketing / Marketing Cloud;Hybris;[Hh]ybris\\ [Mm]arketing
+31;Hybris Marketing / Marketing Cloud;Hybris;[Hh]ybris \\[Mm]arketing
+31;Hybris Marketing / Marketing Cloud;Hybris;[Hh]ybris \\ [Mm]arketing
+32;Hybris Sales / Sales Cloud;Hybris;[Hh]ybris [Ss]ales
+32;Hybris Sales / Sales Cloud;Hybris;[Hh]ybris-[Ss]ales
+32;Hybris Sales / Sales Cloud;Hybris;[Hh]ybris- [Ss]ales
+32;Hybris Sales / Sales Cloud;Hybris;[Hh]ybris -[Ss]ales
+32;Hybris Sales / Sales Cloud;Hybris;[Hh]ybris - [Ss]ales
+32;Hybris Sales / Sales Cloud;Hybris;[Hh]ybris/[Ss]ales
+32;Hybris Sales / Sales Cloud;Hybris;[Hh]ybris/ [Ss]ales
+32;Hybris Sales / Sales Cloud;Hybris;[Hh]ybris /[Ss]ales
+32;Hybris Sales / Sales Cloud;Hybris;[Hh]ybris / [Ss]ales
+32;Hybris Sales / Sales Cloud;Hybris;[Hh]ybris\\[Ss]ales
+32;Hybris Sales / Sales Cloud;Hybris;[Hh]ybris\\ [Ss]ales
+32;Hybris Sales / Sales Cloud;Hybris;[Hh]ybris \\[Ss]ales
+32;Hybris Sales / Sales Cloud;Hybris;[Hh]ybris \\ [Ss]ales
+33;ABAP;Netweaver;ABAP
+34;Basis;Netweaver;Basis
+34;Basis;Netweaver;BASIS
+35;BRF+ / DSM;Netweaver;BRF\+
+35;BRF+ / DSM;Netweaver;DSM
+35;BRF+ / DSM;Netweaver;BRF[Pp]lus
+35;BRF+ / DSM;Netweaver;BRF [Pp]lus
+36;CPI - Cloud Platform Integration;Netweaver;CPI
+36;CPI - Cloud Platform Integration;Netweaver;[Cc]loud [Pp]latform [Ii]ntegration
+37;Data Migration;Netweaver;[Dd]ata [Mm]igration
+38;Enterprise Portal;Netweaver;[Pp]ortal
+39;Fiori;Netweaver;[Ff]iori
+40;Gateway;Netweaver;[Gg]ateway
+41;HCI - HANA Cloud Integration;Netweaver;HCI
+41;HCI - HANA Cloud Integration;Netweaver;HANA [Cc]loud [Ii]ntegrator
+41;HCI - HANA Cloud Integration;Netweaver;HANA [Cc]loud [Ii]ntegration
+42;Mobile;Netweaver;SAP [Mm]obile
+42;Mobile;Netweaver;SAP-[Mm]obile
+42;Mobile;Netweaver;SAP -[Mm]obile
+42;Mobile;Netweaver;SAP- [Mm]obile
+42;Mobile;Netweaver;SAP - [Mm]obile
+42;Mobile;Netweaver;SAP/[Mm]obile
+42;Mobile;Netweaver;SAP /[Mm]obile
+42;Mobile;Netweaver;SAP/ [Mm]obile
+42;Mobile;Netweaver;SAP / [Mm]obile
+42;Mobile;Netweaver;SAP\\[Mm]obile
+42;Mobile;Netweaver;SAP \\[Mm]obile
+42;Mobile;Netweaver;SAP\\ [Mm]obile
+42;Mobile;Netweaver;SAP \\ [Mm]obile
+42;Mobile;Netweaver;SAP&[Mm]obile
+42;Mobile;Netweaver;SAP &[Mm]obile
+42;Mobile;Netweaver;SAP& [Mm]obile
+42;Mobile;Netweaver;SAP & [Mm]obile
+43;PI/XI;Netweaver;PIXI
+43;PI/XI;Netweaver;PI-XI
+43;PI/XI;Netweaver;PI -XI
+43;PI/XI;Netweaver;PI -XI
+43;PI/XI;Netweaver;PI - XI
+43;PI/XI;Netweaver;PI&XI
+43;PI/XI;Netweaver;PI &XI
+43;PI/XI;Netweaver;PI &XI
+43;PI/XI;Netweaver;PI & XI
+43;PI/XI;Netweaver;PI/XI
+43;PI/XI;Netweaver;PI /XI
+43;PI/XI;Netweaver;PI /XI
+43;PI/XI;Netweaver;PI / XI
+43;PI/XI;Netweaver;PI\\XI
+43;PI/XI;Netweaver;PI \\XI
+43;PI/XI;Netweaver;PI \\XI
+43;PI/XI;Netweaver;PI \\ XI
+43;PI/XI;Netweaver;XIPI
+43;PI/XI;Netweaver;XI-PI
+43;PI/XI;Netweaver;XI -PI
+43;PI/XI;Netweaver;XI- PI
+43;PI/XI;Netweaver;XI - PI
+43;PI/XI;Netweaver;XI&PI
+43;PI/XI;Netweaver;XI &PI
+43;PI/XI;Netweaver;XI& PI
+43;PI/XI;Netweaver;XI & PI
+43;PI/XI;Netweaver;XI/PI
+43;PI/XI;Netweaver;XI /PI
+43;PI/XI;Netweaver;XI/ PI
+43;PI/XI;Netweaver;XI / PI
+43;PI/XI;Netweaver;XI\\PI
+43;PI/XI;Netweaver;XI \\PI
+43;PI/XI;Netweaver;XI\\ PI
+43;PI/XI;Netweaver;XI \\ PI
+44;PO - Process Orchestration;Netweaver;PO
+44;PO - Process Orchestration;Netweaver;[Pp]rocess [Oo]rchestration
+45;PO BPM - Business Process Management;Netweaver;BPM
+45;PO BPM - Business Process Management;Netweaver;[Bb]usiness [Pp]rocess [Mm]anagement
+45;PO BPM - Business Process Management;Netweaver;PO-BPM
+45;PO BPM - Business Process Management;Netweaver;PO- BPM
+45;PO BPM - Business Process Management;Netweaver;PO -BPM
+45;PO BPM - Business Process Management;Netweaver;PO - BPM
+45;PO BPM - Business Process Management;Netweaver;PO/BPM
+45;PO BPM - Business Process Management;Netweaver;PO/ BPM
+45;PO BPM - Business Process Management;Netweaver;PO /BPM
+45;PO BPM - Business Process Management;Netweaver;PO / BPM
+45;PO BPM - Business Process Management;Netweaver;PO&BPM
+45;PO BPM - Business Process Management;Netweaver;PO& BPM
+45;PO BPM - Business Process Management;Netweaver;PO &BPM
+45;PO BPM - Business Process Management;Netweaver;PO & BPM
+45;PO BPM - Business Process Management;Netweaver;PO\\BPM
+45;PO BPM - Business Process Management;Netweaver;PO\\ BPM
+45;PO BPM - Business Process Management;Netweaver;PO \\BPM
+45;PO BPM - Business Process Management;Netweaver;PO \\ BPM
+46;UI5;Netweaver;UI5
+46;UI5;Netweaver;UI-5
+46;UI5;Netweaver;UI- 5
+46;UI5;Netweaver;UI -5
+46;UI5;Netweaver;UI - 5
+46;UI5;Netweaver;UI/5
+46;UI5;Netweaver;UI/ 5
+46;UI5;Netweaver;UI /5
+46;UI5;Netweaver;UI / 5
+46;UI5;Netweaver;UI&5
+46;UI5;Netweaver;UI& 5
+46;UI5;Netweaver;UI &5
+46;UI5;Netweaver;UI & 5
+46;UI5;Netweaver;UI\\5
+46;UI5;Netweaver;UI\\ 5
+46;UI5;Netweaver;UI \\5
+46;UI5;Netweaver;UI \\ 5
+47;WebDynpro;Netweaver;[Ww]eb[Dd]ynpro
+48;Workflow;Netweaver;Workflow
+49;Authorizations;SAP;[Aa]uthorizations?
+49;Authorizations;SAP;[Aa]uthorisations?
+50;Business One;SAP;[Bb]usiness [Oo]ne
+51;EDI;SAP;EDI
+52;GRC;SAP;GRC
+53;ILM (Information Lifecycle Management);SAP;ILM
+53;ILM (Information Lifecycle Management);SAP;[Aa]rchiving
+53;ILM (Information Lifecycle Management);SAP;[Ii]nformation [Ll]ifecycle [Mm]anagement
+54;Java;SAP;[Jj]ava
+55;LSMW;SAP;LSMW
+56;OER - Object Event Repository;SAP;OER
+56;OER - Object Event Repository;SAP;[Oo]bject [Ee]vent [Rr]epository
+57;APO;Supply Chain;APO
+58;Ariba;Supply Chain;[Aa]riba
+59;CRM;Supply Chain;CRM
+60;CS / SM;Supply Chain;CS(S|P)M
+60;CS / SM;Supply Chain;CS-(S|P)M
+60;CS / SM;Supply Chain;CS -(S|P)M
+60;CS / SM;Supply Chain;CS- (S|P)M
+60;CS / SM;Supply Chain;CS - (S|P)M
+60;CS / SM;Supply Chain;CS&(S|P)M
+60;CS / SM;Supply Chain;CS &(S|P)M
+60;CS / SM;Supply Chain;CS& (S|P)M
+60;CS / SM;Supply Chain;CS & (S|P)M
+60;CS / SM;Supply Chain;CS/(S|P)M
+60;CS / SM;Supply Chain;CS /(S|P)M
+60;CS / SM;Supply Chain;CS/ (S|P)M
+60;CS / SM;Supply Chain;CS / (S|P)M
+60;CS / SM;Supply Chain;CS\\(S|P)M
+60;CS / SM;Supply Chain;CS \\(S|P)M
+60;CS / SM;Supply Chain;CS\\ (S|P)M
+60;CS / SM;Supply Chain;CS \\ (S|P)M
+61;DMS;Supply Chain;DMS
+62;EAM;Supply Chain;EAM
+63;EH&S - Health and Safety;Supply Chain;EHS
+63;EH&S - Health and Safety;Supply Chain;EH-S
+63;EH&S - Health and Safety;Supply Chain;EH -S
+63;EH&S - Health and Safety;Supply Chain;EH- S
+63;EH&S - Health and Safety;Supply Chain;EH - S
+63;EH&S - Health and Safety;Supply Chain;EH&S
+63;EH&S - Health and Safety;Supply Chain;EH &S
+63;EH&S - Health and Safety;Supply Chain;EH& S
+63;EH&S - Health and Safety;Supply Chain;EH & S
+63;EH&S - Health and Safety;Supply Chain;EH/S
+63;EH&S - Health and Safety;Supply Chain;EH /S
+63;EH&S - Health and Safety;Supply Chain;EH/ S
+63;EH&S - Health and Safety;Supply Chain;EH / S
+63;EH&S - Health and Safety;Supply Chain;EH\\S
+63;EH&S - Health and Safety;Supply Chain;EH \\S
+63;EH&S - Health and Safety;Supply Chain;EH\\ S
+63;EH&S - Health and Safety;Supply Chain;EH \\ S
+63;EH&S - Health and Safety;Supply Chain;HSE
+63;EH&S - Health and Safety;Supply Chain;HS-E
+63;EH&S - Health and Safety;Supply Chain;HS -E
+63;EH&S - Health and Safety;Supply Chain;HS- E
+63;EH&S - Health and Safety;Supply Chain;HS - E
+63;EH&S - Health and Safety;Supply Chain;HS&E
+63;EH&S - Health and Safety;Supply Chain;HS &E
+63;EH&S - Health and Safety;Supply Chain;HS& E
+63;EH&S - Health and Safety;Supply Chain;HS & E
+63;EH&S - Health and Safety;Supply Chain;HS/E
+63;EH&S - Health and Safety;Supply Chain;HS /E
+63;EH&S - Health and Safety;Supply Chain;HS/ E
+63;EH&S - Health and Safety;Supply Chain;HS / E
+63;EH&S - Health and Safety;Supply Chain;HS\\E
+63;EH&S - Health and Safety;Supply Chain;HS \\E
+63;EH&S - Health and Safety;Supply Chain;HS\\ E
+63;EH&S - Health and Safety;Supply Chain;HS \\ E
+64;eWM (extended Warehouse Management);Supply Chain;eWM
+64;eWM (extended Warehouse Management);Supply Chain;e-WM
+64;eWM (extended Warehouse Management);Supply Chain;e -WM
+64;eWM (extended Warehouse Management);Supply Chain;e- WM
+64;eWM (extended Warehouse Management);Supply Chain;e - WM
+64;eWM (extended Warehouse Management);Supply Chain;e&WM
+64;eWM (extended Warehouse Management);Supply Chain;e &WM
+64;eWM (extended Warehouse Management);Supply Chain;e& WM
+64;eWM (extended Warehouse Management);Supply Chain;e & WM
+64;eWM (extended Warehouse Management);Supply Chain;e/WM
+64;eWM (extended Warehouse Management);Supply Chain;e /WM
+64;eWM (extended Warehouse Management);Supply Chain;e/ WM
+64;eWM (extended Warehouse Management);Supply Chain;e / WM
+64;eWM (extended Warehouse Management);Supply Chain;e\\WM
+64;eWM (extended Warehouse Management);Supply Chain;e \\WM
+64;eWM (extended Warehouse Management);Supply Chain;e\\ WM
+64;eWM (extended Warehouse Management);Supply Chain;e \\ WM
+65;GTS - Global Trade Services;Supply Chain;GTS
+65;GTS - Global Trade Services;Supply Chain;[Gg]lobal [Tt]rade [Ss]ervices?
+66;IBP - Integrated Business Planning;Supply Chain;[Ii]ntegrated [Bb]usiness [Pp]lanning
+66;IBP - Integrated Business Planning;Supply Chain;IBP
+66;IBP - Integrated Business Planning;Supply Chain;I-B-P
+66;IBP - Integrated Business Planning;Supply Chain;I&B&P
+66;IBP - Integrated Business Planning;Supply Chain;I/B/P
+66;IBP - Integrated Business Planning;Supply Chain;I\\B\\P
+67;LES;Supply Chain;LES?
+68;Master Data Governance (MDG);Supply Chain;MDG
+68;Master Data Governance (MDG);Supply Chain;[Mm]aster [Dd]ata [Gg]overnance
+69;MDM;Supply Chain;MDM
+69;MDM;Supply Chain;[Mm]aster [Dd]ata [Mm]anagement
+70;MII - Manufacturing Intelligence;Supply Chain;[Mm]anufacturing [Ii]ntelligence
+70;MII - Manufacturing Intelligence;Supply Chain;MII
+71;MM;Supply Chain;[Mm]aterials? [Mm]anagement
+71;MM;Supply Chain;MM
+72;PLM;Supply Chain;PLM
+73;PM - Plant Maintenance;Supply Chain;[Pp]lant [Mm]anagement
+73;PM - Plant Maintenance;Supply Chain;PM
+74;PP;Supply Chain;[Pp]roduction [Pp]lanning
+74;PP;Supply Chain;PP
+75;PPM - Project & Portfolio Management;Supply Chain;[Pp]roject and [Pp]ortfolio [Mm]anagement
+75;PPM - Project & Portfolio Management;Supply Chain;[Pp]roject & [Pp]ortfolio [Mm]anagement
+75;PPM - Project & Portfolio Management;Supply Chain;PPM
+76;PP-PI;Supply Chain;PPPI
+76;PP-PI;Supply Chain;PP-PI
+76;PP-PI;Supply Chain;PP -PI
+76;PP-PI;Supply Chain;PP- PI
+76;PP-PI;Supply Chain;PP - PI
+76;PP-PI;Supply Chain;PP&PI
+76;PP-PI;Supply Chain;PP &PI
+76;PP-PI;Supply Chain;PP& PI
+76;PP-PI;Supply Chain;PP & PI
+76;PP-PI;Supply Chain;PP/PI
+76;PP-PI;Supply Chain;PP /PI
+76;PP-PI;Supply Chain;PP/ PI
+76;PP-PI;Supply Chain;PP / PI
+76;PP-PI;Supply Chain;PP\\PI
+76;PP-PI;Supply Chain;PP \\PI
+76;PP-PI;Supply Chain;PP\\ PI
+76;PP-PI;Supply Chain;PP \\ PI
+77;PS;Supply Chain;[Pp]roject [Ss]ystems?
+77;PS;Supply Chain;PS
+78;QM;Supply Chain;[Qq]uality [Mm]anagement
+78;QM;Supply Chain;QM
+79;SCM;Supply Chain;[Ss]upply [Cc]hain [Mm]anagement
+79;SCM;Supply Chain;SCM
+80;SD;Supply Chain;[Ss]ales and [Dd]istributions?
+80;SD;Supply Chain;[Ss]ales & [Dd]istributions?
+80;SD;Supply Chain;SD
+81;SRM;Supply Chain;SRM
+82;TM - Transportation Management;Supply Chain;[Tt]ransportation [Mm]anagement
+82;TM - Transportation Management;Supply Chain;TM
+83;VC - Variant Configuration;Supply Chain;[Vv]ariant [Cc]onfiguration
+83;VC - Variant Configuration;Supply Chain;VC
+84;WM;Supply Chain;[Ww]arehouse [Mm]anagement
+84;WM;Supply Chain;WM

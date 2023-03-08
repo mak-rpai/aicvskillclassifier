@@ -1,11 +1,11 @@
 category;search_tags;regex_pattern;original_skill
-BI Tools;Cloud Analytics;\b([Cc]loud\s[Aa]nalytics|[Aa]nalytics\s[Cc]loud)\b;Analytics Cloud
-BI Tools;BI?IP;\bBIIP\b;BI Integrated Planner
-BI Tools;BI?BW;\bBIBW\b;BI / BW
-BI Tools;BO - Data Services (BODS);\b(BO\s?[\/\-]*\s?DS)\b;BO - Data Services (BODS)
-BI Tools;BO - Design Studio;\b(Design\s?[\/\-]*\s?Studio)\b;BO - Design Studio
-BI Tools;BO / Business Objects;\b(BO|[Bb]usiness\s[Oo]bjects)\b;BO / Business Objects
-BI Tools;BPC (Outlooksoft);\bBPC\b;BPC (Outlooksoft)
+BI Tools;Cloud Analytics;\b([Cc]loud\s[Aa]nalytics?|[Aa]nalytics?\s[Cc]loud|SAC|[Dd]ata\s[Ww]arehouse\s[Cc]loud)\b;Analytics Cloud
+BI Tools;BI?IP;\b(BIIP|[Ii]ntegrated\s[Pp]lanner|[Ii]ntegrated\s[Pp]laninng|[Ii]ntegrated\s[Bb]usiness\s[Pp]laninng)\b;BI Integrated Planner
+BI Tools;BI?BW;\b(BIBW|BW\d?|[Dd]ata\s[Ww]arehouse|[Dd]ata\s[Ww]arehousing)\b;BI / BW
+BI Tools;BO - Data Services (BODS);\b(BO\s?[\\\/\-\&]?\s?DS|BO\s[Dd]ata\s[Ss]ervices?)\b;BO - Data Services (BODS)
+BI Tools;BO - Design Studio;\b([Dd]esign\s?[\\\/\-]?\s?[Ss]tudio)\b;BO - Design Studio
+BI Tools;BO / Business Objects;\b(BO|[Bb]usiness\s[Oo]bjects?)\b;BO / Business Objects
+BI Tools;BPC (Outlooksoft);\b(BPC|[Oo]utlooksoft)\b;BPC (Outlooksoft)
 BI Tools;Lumira 2.X;\b[Ll]umira\b;Lumira 2.X
 Financial;CI - Convergent Invoicing;\b(CI|[Cc]onvergent\s[Ii]nvoicing|BRIM|[Bb]illing\s(and|\&)\s[Rr]evenue\s[Ii]nnovation\s[Mm]management)\b;CI - Convergent Invoicing
 Financial;CO;\b(CO|CO\s?[\\\&\/\-]?\s?PA|PCA|[Pp]rofit\s[Cc]enter\s[Aa]ccounting|CCA|[Cc]ontrolling|[Cc]ost\s[Cc]enter\s[Aa]ccounting|OPA|[Oo]rder\s[Pp]rocessing\s[Aa]dministration|[Pp]rofitability\s[Aa]nalysis)\b;CO

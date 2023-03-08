@@ -5,4 +5,4 @@ docx2txt==0.8
 scikit-learn==1.0.2
 plotly==5.13.0
 streamlit-authenticator==0.2.1
-xgboost==0.90
+xgboost==1.7.4
