@@ -15,7 +15,7 @@ import streamlit as st
 import plotly.express as px
 TRUNCATED_VALUE = 1
 #import operator
-@st.cache_data
+@st.cache
 def return_dataframes():
     fn = lambda x: r"\b("+x+r")\b"
     df_replace = pd.read_csv("./data/ReplaceTerms.csv",sep=";",encoding="utf-8",)
