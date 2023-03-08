@@ -1,6 +1,6 @@
 pandas==1.5.2
 numpy==1.23.5
-streamlit==1.15.2
+streamlit==1.19.0
 docx2txt==0.8
 scikit-learn==1.0.2
 plotly==5.13.0
