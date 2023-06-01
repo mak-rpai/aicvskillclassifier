@@ -117,7 +117,7 @@ def get_fi_model_output(data, originalFiSkillList):
             predict[0][np.argmax(data)]=1
         else:
             pass
-        predictedSkillList = list(originalFiSkillList[predict[0].astype(int).astype(np.bool)])
+        predictedSkillList = list(originalFiSkillList[predict[0].astype(int).astype(bool)])
     return predictedSkillList
 def generate_bar_chart_plotly(entities, titleText, color_map):
   plot_df = pd.DataFrame({
